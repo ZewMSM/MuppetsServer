@@ -1,0 +1,21 @@
+{
+    "BETA_TESTING_MESSAGE": {
+        "ru": "В данный момент ZewMSM доступен только в рамках закрытого бета-тестирования.\n\nЕсли вы имеете доступ, нажмите на кнопку ниже.",
+        "en": "ZewMSM is currently only available as part of closed beta testing.\n\nIf you have access, click the button below."
+    },
+
+    "OPEN_TELEGRAM_BUTTON": {
+        "ru": "Перейти в Telegram",
+        "en": "Open Telegram"
+    },
+
+    "SERVERS_NOT_WORK_SUKA_BLYAT_MESSAGE": {
+        "ru": "В данный момент сервера ZewMSM недоступны для игры.",
+        "en": "ZewMSM servers are currently unavailable for play."
+    },
+
+    "INVALID_VERSION_MESSAGE": {
+        "ru": "Ваша версия - инвалид (обновитесь)",
+        "en": "Your version is invalid (update time)"
+    }
+}
