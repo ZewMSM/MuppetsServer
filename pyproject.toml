@@ -1,0 +1,18 @@
+[project]
+name = "muppetsserver"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.13.3",
+    "aiosqlite>=0.22.1",
+    "fastapi>=0.129.2",
+    "greenlet>=3.3.2",
+    "pycryptodome>=3.23.0",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.22",
+    "sqlalchemy>=2.0.46",
+    "uvicorn>=0.41.0",
+    "uvloop>=0.22.1",
+]
