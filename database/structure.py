@@ -2,13 +2,14 @@ import json
 import logging
 from pathlib import Path
 
-from database import StructureDB
+# localmodules:start
+from database import StructureDB, _CONTENT_ROOT
 from database.base_adapter import BaseAdapter, _session_ctx, register_adapter
 from ZewSFS.Types import Int, SFSArray, SFSObject
+# localmodules:end
 
 logger = logging.getLogger(__name__)
 
-_CONTENT_ROOT = Path(__file__).resolve().parent.parent / "content" / "base_game_data"
 _STRUCTURE_JSON_PATH = _CONTENT_ROOT / "structure_data.json"
 
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 import json
 
+# localmodules:start
 from . import SFSArray
 from .BaseType import BaseType
 from .Bool import Bool
@@ -23,6 +24,7 @@ from .ShortArray import ShortArray
 from .UtfString import UtfString
 from .UtfStringArray import UtfStringArray
 from ..Exceptions import InvalidDataType
+# localmodules:end
 
 
 class SFSObject(BaseType):
@@ -92,8 +94,14 @@ class SFSObject(BaseType):
             str: A string representation of the SFS object.
         """
 
+        # localmodules:start
         from . import stringify_object
-        return f"(sfs_object){' ' + self.get_name() if len(self.get_name()) > 0 else ''}: \n" + stringify_object(1, self, "")
+
+        # localmodules:end
+        return (
+            f"(sfs_object){' ' + self.get_name() if len(self.get_name()) > 0 else ''}: \n"
+            + stringify_object(1, self, "")
+        )
 
     def __contains__(self, item: str) -> bool:
         """
@@ -198,7 +206,8 @@ class SFSObject(BaseType):
         packed = self.pack_name() + bytes([18])
         packed += len(self.get_value().keys()).to_bytes(2, "big")
         for item_name, item_value in self.get_value().items():
-            item_value.set_name(item_name)
+            if hasattr(item_value, "set_name"):
+                item_value.set_name(item_name)
             packed += item_value.pack()
         return packed
 
@@ -220,9 +229,10 @@ class SFSObject(BaseType):
 
         return {key: tokenized[key] for key in sorted(tokenized)}
 
-
     @staticmethod
-    def unpack(buffer: io.BytesIO | bytes, name: str | None = None, skip_type: bool = False) -> SFSObject:
+    def unpack(
+        buffer: io.BytesIO | bytes, name: str | None = None, skip_type: bool = False
+    ) -> SFSObject:
         """
         Unpacks a bytes buffer into an SFSObject instance.
 
@@ -235,8 +245,10 @@ class SFSObject(BaseType):
             SFSObject: The unpacked SFSObject instance.
         """
 
+        # localmodules:start
         from . import sfs2x_datatypes
         from .SFSArray import SFSArray
+        # localmodules:end
 
         if isinstance(buffer, bytes):
             buffer = io.BytesIO(buffer)
@@ -601,11 +613,9 @@ class SFSObject(BaseType):
             SFSObject: The SFS object itself.
         """
 
-
         if value is None:
             self.putNull(key)
         elif type(value) is int:
-
             if value > 2147483647:
                 self.putLong(key, value)
             else:
@@ -725,6 +735,8 @@ class SFSObject(BaseType):
         """
 
         if indent is not None:
-            return json.dumps(self.to_python_object(detailed), ensure_ascii=False, indent=indent)
+            return json.dumps(
+                self.to_python_object(detailed), ensure_ascii=False, indent=indent
+            )
 
         return json.dumps(self.to_python_object(detailed), ensure_ascii=False)

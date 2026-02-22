@@ -2,13 +2,14 @@ import json
 import logging
 from pathlib import Path
 
+# localmodules:start
 from ZewSFS.Types import Int, SFSObject, SFSArray
-from database import LevelDB
+from database import LevelDB, _CONTENT_ROOT
 from database.base_adapter import BaseAdapter, _session_ctx, register_adapter
+# localmodules:end
 
 logger = logging.getLogger(__name__)
 
-_CONTENT_ROOT = Path(__file__).resolve().parent.parent / "content" / "base_game_data"
 _LEVEL_JSON_PATH = _CONTENT_ROOT / "level_data.json"
 
 
@@ -30,6 +31,7 @@ class Level(BaseAdapter):
     async def _ensure_loaded(cls):
         async with _session_ctx() as session:
             from sqlalchemy import select
+
             result = await session.execute(select(LevelDB).limit(1))
             if result.scalar_one_or_none() is not None:
                 return
@@ -71,17 +73,23 @@ class Level(BaseAdapter):
                 inst.diamonds_conversion = 0
             inst.diamond_reward = record.get("diamond_reward", 0)
             inst.max_bakeries = record.get("max_bakeries", 0)
-            inst.daily_rewards = json.dumps(record.get("daily_rewards", [])) if isinstance(record.get("daily_rewards"), list) else (record.get("daily_rewards") or "[]")
-            db_rows.append(LevelDB(
-                id=inst.id,
-                level=inst.level,
-                xp=inst.xp,
-                coins_conversion=inst.coins_conversion,
-                diamonds_conversion=inst.diamonds_conversion,
-                diamond_reward=inst.diamond_reward,
-                max_bakeries=inst.max_bakeries,
-                daily_rewards=inst.daily_rewards,
-            ))
+            inst.daily_rewards = (
+                json.dumps(record.get("daily_rewards", []))
+                if isinstance(record.get("daily_rewards"), list)
+                else (record.get("daily_rewards") or "[]")
+            )
+            db_rows.append(
+                LevelDB(
+                    id=inst.id,
+                    level=inst.level,
+                    xp=inst.xp,
+                    coins_conversion=inst.coins_conversion,
+                    diamonds_conversion=inst.diamonds_conversion,
+                    diamond_reward=inst.diamond_reward,
+                    max_bakeries=inst.max_bakeries,
+                    daily_rewards=inst.daily_rewards,
+                )
+            )
         async with _session_ctx() as session:
             for row in db_rows:
                 session.add(row)

@@ -2,13 +2,14 @@ import json
 import logging
 from pathlib import Path
 
-from database import IslandDB
+# localmodules:start
+from database import IslandDB, _CONTENT_ROOT
 from database.base_adapter import BaseAdapter, _session_ctx, register_adapter
 from ZewSFS.Types import Int, SFSArray, SFSObject
+# localmodules:end
 
 logger = logging.getLogger(__name__)
 
-_CONTENT_ROOT = Path(__file__).resolve().parent.parent / "content" / "base_game_data"
 _ISLAND_JSON_PATH = _CONTENT_ROOT / "island_data.json"
 
 

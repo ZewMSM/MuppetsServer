@@ -2,8 +2,10 @@
 
 import time
 
+# localmodules:start
 from ZewSFS.Server import SFSRouter, SFSServerClient
 from ZewSFS.Types import SFSObject
+# localmodules:end
 
 router = SFSRouter()
 
@@ -83,3 +85,7 @@ async def muppetman_add_egg(client: SFSServerClient, params: SFSObject):
         response.set_item(k, params.get_item(k))
     response.putBool("gs_muppetman_add_egg", True)
     return response
+
+# Алиас для сборки в один файл (muppets_server использует misc_actions.router)
+misc_actions = type("_RouterAlias", (), {})()
+misc_actions.router = router

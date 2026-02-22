@@ -3,7 +3,9 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class IntArray(BaseType):
@@ -59,8 +61,8 @@ class IntArray(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        length = int.from_bytes(buffer.read(2), 'big')
+        length = int.from_bytes(buffer.read(2), "big")
         array = []
         for _ in range(length):
-            array.append(int.from_bytes(buffer.read(4), 'big', signed=True))
+            array.append(int.from_bytes(buffer.read(4), "big", signed=True))
         return IntArray(name, array)

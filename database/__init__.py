@@ -4,19 +4,28 @@ from pathlib import Path
 
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
+# localmodules:start
 from database.db_classes import *
+# localmodules:end
 
-logger = logging.getLogger('Database')
+logger = logging.getLogger("Database")
 
-_database_path = environ.get("DATABASE_PATH", "muppets.sqlite")
-if _database_path != ":memory:" and not Path(_database_path).is_absolute():
-    _database_path = str(Path.cwd() / _database_path)
+# Единственное место с __file__: при запуске из Chaquopy (exec(string)) __file__ нет
+try:
+    _CONTENT_ROOT = Path(__file__).resolve().parent.parent / "content" / "base_game_data"
+except NameError:
+    _CONTENT_ROOT = Path.cwd() / "content" / "base_game_data"
+
+_database_path = f'{environ.get("HOME", ".")}/{environ.get("DATABASE_PATH", "zewmsm.db")}'
 engine = create_async_engine(
-    f"sqlite+aiosqlite:///{_database_path}",
+    f'sqlite+aiosqlite:///{environ.get("HOME")}/{environ.get("DATABASE_PATH", "zewmsm.db")}',
     echo=False,
-    connect_args={"check_same_thread": False},
+    pool_size=5,
+    max_overflow=5,
+    pool_timeout=10,
 )
 Session = async_sessionmaker(bind=engine, expire_on_commit=False)
+SessionLocal = Session  # алиас для сборки в один файл (base_adapter использует SessionLocal)
 
 
 async def init_database():

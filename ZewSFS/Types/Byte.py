@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import io
+
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class Byte(BaseType):

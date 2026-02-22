@@ -3,7 +3,9 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class UtfString(BaseType):
@@ -34,7 +36,7 @@ class UtfString(BaseType):
             bytes: The packed name of the object followed by a byte representing the utf_string value.
         """
         length = len(self.get_value()).to_bytes(2, "big")
-        return self.pack_name() + bytes([8]) + length + self.get_value().encode('utf8')
+        return self.pack_name() + bytes([8]) + length + self.get_value().encode("utf8")
 
     @staticmethod
     def unpack(buffer: io.BytesIO | bytes, name: str | None = None) -> UtfString:
@@ -53,5 +55,5 @@ class UtfString(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        length = int.from_bytes(buffer.read(2), 'big')
-        return UtfString(name, buffer.read(length).decode('utf8'))
+        length = int.from_bytes(buffer.read(2), "big")
+        return UtfString(name, buffer.read(length).decode("utf8"))

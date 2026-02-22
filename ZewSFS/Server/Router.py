@@ -1,14 +1,18 @@
 from typing import Callable, Awaitable, Any
 
+# localmodules:start
 from ZewSFS.Types import SFSObject
+# localmodules:end
 
 
 class SFSRouter:
     """
-        Represents the class which handles requests and routes they to server.
+    Represents the class which handles requests and routes they to server.
     """
 
-    request_handlers: dict[str, Callable[['SFSServerClient', 'SFSObject'], Awaitable[Any]]] = {}
+    request_handlers: dict[
+        str, Callable[["SFSServerClient", "SFSObject"], Awaitable[Any]]
+    ] = {}
     cached: bool = None
 
     def on_request(self, message, cached: bool = None):

@@ -6,6 +6,7 @@ class InvalidDataType(Exception):
         id: str
             The id of the unsupported datatype.
     """
+
     def __init__(self, id):
         super().__init__(f"Datatype with id: {id} is not supported")
 
@@ -18,6 +19,7 @@ class CompilePacketException(Exception):
         error: str
             The error message.
     """
+
     def __init__(self, error):
         super().__init__(error)
 
@@ -30,5 +32,6 @@ class SendPacketException(Exception):
         error: str
             The error message.
     """
+
     def __init__(self, error):
         super().__init__(error)

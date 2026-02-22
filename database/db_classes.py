@@ -15,7 +15,9 @@ from sqlalchemy.orm import DeclarativeBase, relationship
 
 
 class Base(AsyncAttrs, DeclarativeBase):
-    id = Column(BIGINT(), primary_key=True, unique=True, nullable=False, autoincrement=True)
+    id = Column(
+        BIGINT(), primary_key=True, unique=True, nullable=False, autoincrement=True
+    )
 
     date_created = Column(
         BIGINT, nullable=False, default=lambda: int(datetime.now().timestamp() * 1000)

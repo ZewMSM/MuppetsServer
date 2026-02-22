@@ -1,5 +1,6 @@
 import logging
 
+# localmodules:start
 from MuppetsServer.routers import (
     baking_actions,
     egg_actions,
@@ -10,16 +11,25 @@ from MuppetsServer.routers import (
     static_data,
     structure_actions,
 )
+from MuppetsServer.tools.player_island_factory import PlayerIslandFactory
 from ZewSFS import SFSServer
 from ZewSFS.Server import SFSServerClient
 from ZewSFS.Types import SFSObject
+from database.player import Player, PlayerIsland
+# localmodules:end
 
 logger = logging.getLogger("MuppetsServer/Main")
 
 
-async def _load_player(client: "SFSServerClient", bbb_id: int):
-    from database.player import Player
+async def _ensure_islands_initialized(player: Player) -> None:
+    if not getattr(player, "islands", None):
+        player.islands = await PlayerIsland.load_all_by(user_id=player.id)
+    for island in player.islands:
+        if not getattr(island, "structures", None) or len(island.structures) == 0:
+            await PlayerIslandFactory.create_initial_structures(island)
 
+
+async def _load_player(client: "SFSServerClient", bbb_id: int):
     player = await Player.load_by_id(bbb_id)
     if player is None:
         player = Player()
@@ -32,6 +42,7 @@ async def _load_player(client: "SFSServerClient", bbb_id: int):
         await player.save()
         await player.on_load_complete()
         await player.save()
+    await _ensure_islands_initialized(player)
     client.player = player
 
 

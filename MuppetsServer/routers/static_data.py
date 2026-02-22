@@ -1,5 +1,6 @@
 import time
 
+# localmodules:start
 from database.backdrop import Backdrop
 from database.breeding import BreedingCombination
 from database.island import Island
@@ -9,6 +10,7 @@ from database.monster import Monster
 from database.structure import Structure
 from ZewSFS.Server import SFSRouter, SFSServerClient
 from ZewSFS.Types import SFSArray, SFSObject
+# localmodules:end
 
 router = SFSRouter(cached=True)
 
@@ -116,3 +118,7 @@ async def send_quests(client: SFSServerClient, request: SFSObject):
         .putSFSArray("result", SFSArray())
         .putLong("server_time", int(time.time() * 1000))
     )
+
+# Алиас для сборки в один файл (muppets_server использует static_data.router)
+static_data = type("_RouterAlias", (), {})()
+static_data.router = router

@@ -3,6 +3,7 @@ import logging
 import time
 from typing import List, Optional
 
+# localmodules:start
 from database import PlayerDB, PlayerIslandDB, PlayerMonsterDB, PlayerStructureDB
 from database.base_adapter import BaseAdapter
 from database.island import Island
@@ -10,6 +11,7 @@ from database.level import Level
 from database.monster import Monster
 from database.structure import Structure
 from ZewSFS.Types import Double, Long, SFSArray, SFSObject
+# localmodules:end
 
 logger = logging.getLogger("GameServer/Player")
 
@@ -247,9 +249,6 @@ class PlayerIsland(BaseAdapter):
             self.island_id,
             self.user_id,
         )
-        from MuppetsServer.tools.player_island_factory import PlayerIslandFactory
-
-        await PlayerIslandFactory.create_initial_structures(self)
         return self
 
     def get_structure(self, user_structure_id: int) -> Optional["PlayerStructure"]:
@@ -282,7 +281,9 @@ class PlayerIsland(BaseAdapter):
         """Legacy: check if island already has a structure with this structure_id."""
         return any(s.structure_id == structure_id for s in self.structures)
 
-    def get_structure_by_structure_id(self, structure_id: int) -> Optional["PlayerStructure"]:
+    def get_structure_by_structure_id(
+        self, structure_id: int
+    ) -> Optional["PlayerStructure"]:
         """Legacy: getStructureOnIslandByStructureType — первая структура с данным structure_id."""
         for s in self.structures:
             if s.structure_id == structure_id:
@@ -301,8 +302,10 @@ class PlayerStructure(BaseAdapter):
     pos_y: int = 0
     flip: int = 0
     muted: int = 0
-    is_complete: int = 0   # Legacy: 1 when built/upgraded, 0 while building/upgrading
-    is_upgrading: int = 0  # Legacy: structure upgrade state; upgrade_started is on island
+    is_complete: int = 0  # Legacy: 1 when built/upgraded, 0 while building/upgrading
+    is_upgrading: int = (
+        0  # Legacy: structure upgrade state; upgrade_started is on island
+    )
     scale: float = 1.0
     building_completed: int = None
     last_collection: int = None
@@ -329,7 +332,7 @@ class PlayerStructure(BaseAdapter):
         params.putInt("muted", self.muted)
         params.putInt("is_complete", self.is_complete)
         params.putInt("is_upgrading", self.is_upgrading)
-        params.putFloat("scale", self.scale)
+        params.putDouble("scale", float(self.scale))
         if self.date_created is not None:
             params.putLong("date_created", self.date_created)
         if self.building_completed is not None:
@@ -448,7 +451,7 @@ class PlayerMonster(BaseAdapter):
         params.putInt("happiness", self.happiness)
         params.putInt("collected_coins", self.collected_coins)
         params.putInt("times_fed", self.times_fed)
-        params.putFloat("volume", self.volume)
+        params.putDouble("volume", float(self.volume))
         if self.date_created is not None:
             params.putLong("date_created", self.date_created)
         if self.last_collection is not None:

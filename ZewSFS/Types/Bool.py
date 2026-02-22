@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import io
+
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class Bool(BaseType):
@@ -49,4 +52,4 @@ class Bool(BaseType):
             buffer = io.BytesIO(buffer)
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
-        return Bool(name, bool.from_bytes(buffer.read(1), 'big'))
+        return Bool(name, bool.from_bytes(buffer.read(1), "big"))

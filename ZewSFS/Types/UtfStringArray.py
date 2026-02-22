@@ -3,7 +3,9 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class UtfStringArray(BaseType):
@@ -59,9 +61,9 @@ class UtfStringArray(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        length = int.from_bytes(buffer.read(2), 'big')
+        length = int.from_bytes(buffer.read(2), "big")
         array = []
         for _ in range(length):
-            string_length = int.from_bytes(buffer.read(2), 'big')
+            string_length = int.from_bytes(buffer.read(2), "big")
             array.append(buffer.read(string_length).decode("utf-8"))
         return UtfStringArray(name, array)

@@ -3,7 +3,9 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class Double(BaseType):
@@ -33,7 +35,11 @@ class Double(BaseType):
         Returns:
             bytes: The packed name of the object followed by a byte representing the double value.
         """
-        return self.pack_name() + bytes([7]) + bytearray(struct.pack('d', self.get_value()))[::-1]
+        return (
+            self.pack_name()
+            + bytes([7])
+            + bytearray(struct.pack("d", self.get_value()))[::-1]
+        )
 
     @staticmethod
     def unpack(buffer: io.BytesIO | bytes, name: str | None = None) -> Double:
@@ -52,4 +58,4 @@ class Double(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        return Double(name, float(struct.unpack('d', buffer.read(8)[::-1])[0]))
+        return Double(name, float(struct.unpack("d", buffer.read(8)[::-1])[0]))

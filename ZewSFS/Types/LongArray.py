@@ -3,20 +3,22 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class LongArray(BaseType):
     """
-    This class represents an array of long integer values. It extends the BaseType class.
-;
-    Attributes:
-        name (str): The name of the long array.
-        value (list[int]): The list of long integers.
+        This class represents an array of long integer values. It extends the BaseType class.
+    ;
+        Attributes:
+            name (str): The name of the long array.
+            value (list[int]): The list of long integers.
 
-    Methods:
-        pack(): Returns a bytes representation of the long array.
-        unpack(buffer, name): Static method that returns a LongArray instance from a bytes buffer.
+        Methods:
+            pack(): Returns a bytes representation of the long array.
+            unpack(buffer, name): Static method that returns a LongArray instance from a bytes buffer.
     """
 
     def __init__(self, name: str, value: list[int]):
@@ -59,8 +61,8 @@ class LongArray(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        length = int.from_bytes(buffer.read(2), 'big')
+        length = int.from_bytes(buffer.read(2), "big")
         array = []
         for _ in range(length):
-            array.append(int.from_bytes(buffer.read(8), 'big', signed=True))
+            array.append(int.from_bytes(buffer.read(8), "big", signed=True))
         return LongArray(name, array)

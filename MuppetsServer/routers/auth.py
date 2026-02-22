@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Query
 
+# localmodules:start
 from config import GAME_SERVER_IP
+# localmodules:end
 
 router = APIRouter()
 
@@ -57,3 +59,7 @@ async def get_updates(ver: str):
 async def get_file():
     """Stub: empty body."""
     return ""
+
+# Алиас для сборки в один файл (auth_app использует auth_router.router)
+auth_router = type("_RouterAlias", (), {})()
+auth_router.router = router

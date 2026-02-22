@@ -1,6 +1,8 @@
 from io import BytesIO
 
+# localmodules:start
 from ZewSFS.Types import SFSObject
+# localmodules:end
 
 
 def compile_packet(packet: SFSObject) -> bytes:
@@ -18,9 +20,9 @@ def compile_packet(packet: SFSObject) -> bytes:
     """
     compiled_packet = packet.pack()
     if len(compiled_packet) < 65535:
-        return b'\x80' + (len(compiled_packet)).to_bytes(2, "big") + compiled_packet
+        return b"\x80" + (len(compiled_packet)).to_bytes(2, "big") + compiled_packet
     else:
-        return b'\x88' + (len(compiled_packet)).to_bytes(4, "big") + compiled_packet
+        return b"\x88" + (len(compiled_packet)).to_bytes(4, "big") + compiled_packet
 
 
 def decompile_packet(packet: BytesIO) -> SFSObject:
@@ -34,4 +36,4 @@ def decompile_packet(packet: BytesIO) -> SFSObject:
         SFSObject: The decompiled packet as an SFSObject.
     """
     pkg = SFSObject.unpack(packet, None, True)
-    return pkg.get('p')
+    return pkg.get("p")

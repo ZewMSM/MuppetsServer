@@ -1,7 +1,9 @@
 import time
 
+# localmodules:start
 from ZewSFS.Server import SFSRouter, SFSServerClient
 from ZewSFS.Types import SFSObject
+# localmodules:end
 
 router = SFSRouter()
 
@@ -128,3 +130,7 @@ async def finish_baking(client: SFSServerClient, params: SFSObject):
     response.putLong("user_structure_id", user_structure_id)
     await client.send_extension("gs_finish_baking", response)
     return response
+
+# Алиас для сборки в один файл (muppets_server использует baking_actions.router)
+baking_actions = type("_RouterAlias", (), {})()
+baking_actions.router = router

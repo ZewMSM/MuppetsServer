@@ -3,8 +3,10 @@ import io
 import logging
 from asyncio import StreamReader, StreamWriter
 
+# localmodules:start
 from ZewSFS.Types import SFSObject
 from ZewSFS.Utils import compile_packet
+# localmodules:end
 
 # from database.player import Player
 

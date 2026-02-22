@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import io
+
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class Short(BaseType):
@@ -31,7 +34,11 @@ class Short(BaseType):
         Returns:
             bytes: The packed name of the object followed by a byte representing the short value.
         """
-        return self.pack_name() + bytes([3]) + self.get_value().to_bytes(2, "big", signed=True)
+        return (
+            self.pack_name()
+            + bytes([3])
+            + self.get_value().to_bytes(2, "big", signed=True)
+        )
 
     @staticmethod
     def unpack(buffer: io.BytesIO | bytes, name: str | None = None) -> Short:
@@ -50,4 +57,4 @@ class Short(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        return Short(name, int.from_bytes(buffer.read(2), 'big', signed=True))
+        return Short(name, int.from_bytes(buffer.read(2), "big", signed=True))

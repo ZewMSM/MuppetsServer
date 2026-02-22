@@ -5,10 +5,12 @@ from asyncio import StreamReader, StreamWriter
 from socket import socket
 from typing import List
 
+# localmodules:start
 from ZewSFS.Types import SFSObject
 from ZewSFS.Utils import decompile_packet, compile_packet
+# localmodules:end
 
-logger = logging.getLogger('ZewSFS/SFSClient')
+logger = logging.getLogger("ZewSFS/SFSClient")
 
 
 class DisconnectException(Exception):
@@ -36,7 +38,13 @@ class SFSClient:
     # connection = None
     loop = None
 
-    def __init__(self, proxy_host: str = None, proxy_port: int = None, proxy_login: str = None, proxy_password: str = None):
+    def __init__(
+        self,
+        proxy_host: str = None,
+        proxy_port: int = None,
+        proxy_login: str = None,
+        proxy_password: str = None,
+    ):
         """
         Initialize a new SFSClient.
 
@@ -47,8 +55,8 @@ class SFSClient:
             proxy_password (str, optional): The password for the proxy server. Defaults to None.
         """
 
-        self.reader: 'StreamReader' = None
-        self.writer: 'StreamWriter' = None
+        self.reader: "StreamReader" = None
+        self.writer: "StreamWriter" = None
 
         # if proxy_host is None or proxy_port is None:
         #     self.connection = socket(AF_INET, SOCK_STREAM)
@@ -94,13 +102,12 @@ class SFSClient:
             port (int, optional): The port of the server. Defaults to 9933.
         """
 
-        logger.info(f'Connecting to {host}:{port}')
+        logger.info(f"Connecting to {host}:{port}")
 
         # self.loop = asyncio.get_running_loop()
         # await self.loop.sock_connect(self.connection, (host, port))
 
-        self.reader, self.writer = await asyncio.open_connection(
-            host, port)
+        self.reader, self.writer = await asyncio.open_connection(host, port)
 
         return await self.send_handshake_request()
 
@@ -145,7 +152,9 @@ class SFSClient:
 
         return await self.read_response()
 
-    async def send_login_request(self, zone: str, username: str, password: str, auth_params: SFSObject):
+    async def send_login_request(
+        self, zone: str, username: str, password: str, auth_params: SFSObject
+    ):
         """
         Send a login request to the server.
 
@@ -178,14 +187,14 @@ class SFSClient:
         request.putInt("r", -1)
         request.putSFSObject("p", params)
 
-        logger.info(f'Sending {command} to server')
+        logger.info(f"Sending {command} to server")
 
         await self.send_packet(1, 12, request)
 
     async def raw_read(self, n) -> bytes:
         resp = await self.reader.read(n)
         if not resp:
-            raise DisconnectException('The client has disconnected from the server')
+            raise DisconnectException("The client has disconnected from the server")
         return resp
 
     async def read_response(self):
@@ -193,15 +202,15 @@ class SFSClient:
         Read a response from the server.
         """
 
-        response = b''
-        packet_size = b''
+        response = b""
+        packet_size = b""
 
         packet_type = await self.raw_read(1)
         __ = packet_type
 
-        if packet_type == b'\x88':
+        if packet_type == b"\x88":
             packet_size_len = 4
-        elif packet_type == b'\x80':
+        elif packet_type == b"\x80":
             packet_size_len = 2
         else:
             return SFSObject(), b""
@@ -222,7 +231,7 @@ class SFSClient:
         __ += response
 
         packet_bytes = io.BytesIO(response)
-        logger.debug(f'Got {len(response)} bytes from server')
+        logger.debug(f"Got {len(response)} bytes from server")
         response = decompile_packet(packet_bytes)
 
         logger.debug(response)
@@ -254,13 +263,13 @@ class SFSClient:
             SFSObject: The response.
         """
 
-        cmd, params = '', ''
+        cmd, params = "", ""
 
         while cmd != command:
             try:
                 response = await self.read_response()
 
-                if 'c' in response:
+                if "c" in response:
                     cmd, params = response.get("c"), response.get("p")
             except Exception as e:
                 print(f"An error occurred: {e}")
@@ -268,7 +277,9 @@ class SFSClient:
 
         return params
 
-    async def wait_requests(self, commands: List[str], timeout=999999) -> (str, SFSObject):
+    async def wait_requests(
+        self, commands: List[str], timeout=999999
+    ) -> (str, SFSObject):
         """
         Wait for a response to any of a list of requests.
 
@@ -280,17 +291,19 @@ class SFSClient:
             tuple: The command and parameters of the response.
         """
 
-        cmd, params = '', ''
+        cmd, params = "", ""
 
         while cmd not in commands:
             try:
                 response = await self.read_response()
 
-                if 'c' in response:
+                if "c" in response:
                     cmd, params = response.get("c"), response.get("p")
 
             except asyncio.TimeoutError:
-                print(f"Timeout Error: No response for commands '{commands}' within {timeout} seconds.")
+                print(
+                    f"Timeout Error: No response for commands '{commands}' within {timeout} seconds."
+                )
                 raise
             except DisconnectException as e:
                 raise e

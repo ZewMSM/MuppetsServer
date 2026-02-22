@@ -1,9 +1,11 @@
 import time
 
+# localmodules:start
 from ZewSFS.Server import SFSRouter, SFSServerClient
 from ZewSFS.Types import SFSObject
 from database.monster import Monster
 from database.player import PlayerMonster, PlayerStructure
+# localmodules:end
 
 router = SFSRouter()
 
@@ -43,7 +45,9 @@ async def buy_egg(client: SFSServerClient, params: SFSObject):
         coin_cost = 0
         diamond_cost = monster.cost_diamonds
 
-    if not await client.player.check_prices(coins=coin_cost, diamonds=diamond_cost, charge_if_can=True):
+    if not await client.player.check_prices(
+        coins=coin_cost, diamonds=diamond_cost, charge_if_can=True
+    ):
         return SFSObject().putBool("success", False).putUtfString("message", "Error")
 
     now_ms = int(time.time() * 1000)
@@ -53,7 +57,11 @@ async def buy_egg(client: SFSServerClient, params: SFSObject):
     nursery.obj_end = completion_time_ms
     await nursery.save()
 
-    user_egg = SFSObject().putLong("obj_end", completion_time_ms).putInt("obj_data", monster_id)
+    user_egg = (
+        SFSObject()
+        .putLong("obj_end", completion_time_ms)
+        .putInt("obj_data", monster_id)
+    )
     return (
         SFSObject()
         .putSFSObject("user_egg", user_egg)
@@ -95,7 +103,7 @@ async def hatch_egg(client: SFSServerClient, params: SFSObject):
     island.structures = await PlayerStructure.load_all_by(user_island_id=island.id)
 
     if monster and monster.xp:
-        await client.player.add_currency('xp', monster.xp)
+        await client.player.add_currency("xp", monster.xp)
 
     resp = (
         SFSObject()
@@ -106,7 +114,9 @@ async def hatch_egg(client: SFSServerClient, params: SFSObject):
     )
     await client.send_extension("gs_hatch_egg", resp)
 
-    full_player = SFSObject().putSFSObject("player_object", await client.player.to_sfs_object())
+    full_player = SFSObject().putSFSObject(
+        "player_object", await client.player.to_sfs_object()
+    )
     full_player.putLong("server_time", int(time.time() * 1000))
     await client.send_extension("gs_player", full_player)
 
@@ -136,7 +146,12 @@ async def speed_up_hatching(client: SFSServerClient, params: SFSObject):
     await user_egg.save()
 
     response = SFSObject().putBool("success", True)
-    response.putSFSObject("user_egg", SFSObject().putLong("obj_end", user_egg.obj_end).putInt("obj_data", user_egg.obj_data))
+    response.putSFSObject(
+        "user_egg",
+        SFSObject()
+        .putLong("obj_end", user_egg.obj_end)
+        .putInt("obj_data", user_egg.obj_data),
+    )
     response.putSFSArray("properties", client.player.get_properties())
     await client.send_extension("gs_speed_up_hatching", response)
     return response
@@ -166,3 +181,7 @@ async def sell_egg(client: SFSServerClient, params: SFSObject):
     response.putSFSArray("properties", client.player.get_properties())
     await client.send_extension("gs_sell_egg", response)
     return response
+
+# Алиас для сборки в один файл (muppets_server использует egg_actions.router)
+egg_actions = type("_RouterAlias", (), {})()
+egg_actions.router = router

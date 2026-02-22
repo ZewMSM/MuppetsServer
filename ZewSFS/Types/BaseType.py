@@ -1,7 +1,7 @@
 import io
 import typing
 
-OBJType = typing.TypeVar('OBJType')
+OBJType = typing.TypeVar("OBJType")
 
 
 class BaseType:
@@ -61,7 +61,7 @@ class BaseType:
         """
         if isinstance(self.__name, str):
             return self.__name
-        return ''
+        return ""
 
     def set_name(self, new_name: str):
         """
@@ -117,10 +117,10 @@ class BaseType:
         """
         if isinstance(self.__name, str) and len(self.__name) != 0:
             name_length = len(self.__name)
-            encoded_name = self.__name.encode('utf-8')
-            return name_length.to_bytes(2, 'big') + encoded_name
+            encoded_name = self.__name.encode("utf-8")
+            return name_length.to_bytes(2, "big") + encoded_name
         else:
-            return b''
+            return b""
 
     @staticmethod
     def unpack_name(buffer: io.BytesIO | bytes) -> str:
@@ -135,7 +135,7 @@ class BaseType:
         """
         if isinstance(buffer, bytes):
             buffer = io.BytesIO(buffer)
-        name_length = int.from_bytes(buffer.read(2), 'big')
+        name_length = int.from_bytes(buffer.read(2), "big")
         name = buffer.read(name_length)
         # buffer.read(1)
-        return name.decode('utf8')
+        return name.decode("utf8")

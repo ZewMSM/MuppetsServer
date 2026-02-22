@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import io
+
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class Int(BaseType):
@@ -31,7 +34,11 @@ class Int(BaseType):
         Returns:
             bytes: The packed name of the object followed by a byte representing the int value.
         """
-        return self.pack_name() + bytes([4]) + self.get_value().to_bytes(4, "big", signed=True)
+        return (
+            self.pack_name()
+            + bytes([4])
+            + self.get_value().to_bytes(4, "big", signed=True)
+        )
 
     @staticmethod
     def unpack(buffer: io.BytesIO | bytes, name: str | None = None) -> Int:
@@ -50,4 +57,4 @@ class Int(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        return Int(name, int.from_bytes(buffer.read(4), 'big', signed=True))
+        return Int(name, int.from_bytes(buffer.read(4), "big", signed=True))

@@ -6,5 +6,4 @@ pycryptodome
 python-multipart
 aiohttp
 greenlet
-uvloop
 python-dotenv

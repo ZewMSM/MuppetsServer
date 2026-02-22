@@ -22,9 +22,12 @@ from asyncio import StreamReader, StreamWriter
 from collections.abc import Awaitable, Callable, Coroutine
 from typing import Any
 
+# localmodules:start
 from ZewSFS.Server.Router import SFSRouter
 from ZewSFS.Server.ServerClient import SFSServerClient
 from ZewSFS.Types import SFSObject
+
+# localmodules:end
 
 logger = logging.getLogger("ZewSFS/SFSServer")
 
@@ -214,7 +217,6 @@ class SFSServer(SFSRouter):
                     handler = self.request_handlers.get(cmd)
                     if handler is not None:
                         resp = await handler(client, params)
-                        print(resp)
                         if type(resp) is str:
                             await client.send_extension(
                                 cmd,
@@ -232,6 +234,7 @@ class SFSServer(SFSRouter):
                             f"Unhandled request from {client.identifier}: {cmd}"
                         )
                         from ZewSFS.Types import SFSObject as SFSObj
+
                         default_resp = SFSObj(params) if params else SFSObj()
                         default_resp.putBool("success", False)
                         await client.send_extension(cmd, default_resp)

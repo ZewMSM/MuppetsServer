@@ -3,7 +3,9 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class Float(BaseType):
@@ -33,7 +35,11 @@ class Float(BaseType):
         Returns:
             bytes: The packed name of the object followed by a byte representing the float value.
         """
-        return self.pack_name() + bytes([6]) + bytearray(struct.pack('f', self.get_value()))
+        return (
+            self.pack_name()
+            + bytes([6])
+            + bytearray(struct.pack("f", self.get_value()))
+        )
 
     @staticmethod
     def unpack(buffer: io.BytesIO | bytes, name: str | None = None) -> Float:
@@ -52,4 +58,4 @@ class Float(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        return Float(name, float(struct.unpack('f', buffer.read(4))[0]))
+        return Float(name, float(struct.unpack("f", buffer.read(4))[0]))

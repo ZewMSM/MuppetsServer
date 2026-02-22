@@ -6,7 +6,7 @@ from os import environ
 
 from Crypto.Cipher import AES
 
-logger = logging.getLogger('MuppetsServer/Utils')
+logger = logging.getLogger("MuppetsServer/Utils")
 
 
 def md5(string: str) -> str:
@@ -21,7 +21,9 @@ def aes_encrypt(message: str, initial_vector_string: str, secret_key: str) -> st
     return base64.b64encode(ciphertext).decode("utf-8")
 
 
-def aes_decrypt(encrypted_data: str, initial_vector_string: str, secret_key: str) -> str:
+def aes_decrypt(
+    encrypted_data: str, initial_vector_string: str, secret_key: str
+) -> str:
     key = secret_key.encode("utf-8")
     iv = initial_vector_string.encode("utf-8")
     ciphertext = base64.b64decode(encrypted_data)

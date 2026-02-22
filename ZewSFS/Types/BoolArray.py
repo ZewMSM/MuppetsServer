@@ -3,7 +3,9 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class BoolArray(BaseType):
@@ -58,7 +60,7 @@ class BoolArray(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        length = int.from_bytes(buffer.read(2), 'big')
+        length = int.from_bytes(buffer.read(2), "big")
         array = []
         for _ in range(length):
             array.append(bool.from_bytes(buffer.read(1), "big"))

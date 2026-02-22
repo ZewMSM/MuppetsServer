@@ -3,13 +3,14 @@ import logging
 from pathlib import Path
 from types import SimpleNamespace
 
-from database import MonsterDB
+# localmodules:start
+from database import MonsterDB, _CONTENT_ROOT
 from database.base_adapter import BaseAdapter, _session_ctx, register_adapter
 from ZewSFS.Types import Int, SFSArray, SFSObject
+# localmodules:end
 
 logger = logging.getLogger(__name__)
 
-_CONTENT_ROOT = Path(__file__).resolve().parent.parent / "content" / "base_game_data"
 _MONSTER_JSON_PATH = _CONTENT_ROOT / "monster_data.json"
 
 

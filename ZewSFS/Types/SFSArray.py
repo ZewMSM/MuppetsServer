@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 import json
 
+# localmodules:start
 from .BaseType import BaseType
 from .Bool import Bool
 from .BoolArray import BoolArray
@@ -22,6 +23,7 @@ from .ShortArray import ShortArray
 from .UtfString import UtfString
 from .UtfStringArray import UtfStringArray
 from ..Exceptions import InvalidDataType
+# localmodules:end
 
 
 class SFSArray(BaseType):
@@ -48,8 +50,14 @@ class SFSArray(BaseType):
             str: A string representation of the SFSArray.
         """
 
+        # localmodules:start
         from . import stringify_array
-        return f"(sfs_array){' ' + self.get_name() if len(self.get_name()) > 0 else ''}: \n" + stringify_array(1, self, "")
+
+        # localmodules:end
+        return (
+            f"(sfs_array){' ' + self.get_name() if len(self.get_name()) > 0 else ''}: \n"
+            + stringify_array(1, self, "")
+        )
 
     def __len__(self) -> int:
         """
@@ -139,8 +147,10 @@ class SFSArray(BaseType):
             SFSArray: The unpacked SFSArray instance.
         """
 
+        # localmodules:start
         from . import sfs2x_datatypes
         from .SFSObject import SFSObject
+        # localmodules:end
 
         if isinstance(buffer, bytes):
             buffer = io.BytesIO(buffer)
@@ -540,7 +550,9 @@ class SFSArray(BaseType):
             index (None, optional): The index to add the value at. Defaults to None.
         """
 
+        # localmodules:start
         from . import SFSObject
+        # localmodules:end
 
         if isinstance(value, bool):
             self.addBool(value, index)
@@ -625,7 +637,9 @@ class SFSArray(BaseType):
         if indent is None:
             return json.dumps(self.to_python_object(detailed), ensure_ascii=False)
 
-        return json.dumps(self.to_python_object(detailed), indent=indent, ensure_ascii=False)
+        return json.dumps(
+            self.to_python_object(detailed), indent=indent, ensure_ascii=False
+        )
 
     @staticmethod
     def from_json(value: str):

@@ -7,21 +7,26 @@ from sqlalchemy import func, select, and_
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
+# localmodules:start
 from ZewSFS.Types import SFSObject, Long, SFSArray
 from database import Base, Session as SessionLocal
+# localmodules:end
 
-T = TypeVar('T', bound='BaseAdapter')
+T = TypeVar("T", bound="BaseAdapter")
 
-current_transaction = __import__('contextvars').ContextVar('current_transaction', default=None)
+current_transaction = __import__("contextvars").ContextVar(
+    "current_transaction", default=None
+)
 
-model_adapter_map: Dict[Type[Base], Type['BaseAdapter']] = {}
+model_adapter_map: Dict[Type[Base], Type["BaseAdapter"]] = {}
 
 
 def register_adapter(model_class: Type[Base]):
-    def decorator(adapter_class: Type['BaseAdapter']):
+    def decorator(adapter_class: Type["BaseAdapter"]):
         model_adapter_map[model_class] = adapter_class
         adapter_class._db_model = model_class
         return adapter_class
+
     return decorator
 
 
@@ -66,7 +71,7 @@ async def _session_ctx():
 class BaseAdapterMeta(type):
     def __new__(mcs, name, bases, dct):
         cls = super().__new__(mcs, name, bases, dct)
-        db_model = dct.get('_db_model')
+        db_model = dct.get("_db_model")
         if db_model:
             model_adapter_map[db_model] = cls
         return cls
@@ -75,7 +80,7 @@ class BaseAdapterMeta(type):
 class BaseAdapter(metaclass=BaseAdapterMeta):
     _db_model: Type[Base]
 
-    _game_id_key = 'id'
+    _game_id_key = "id"
     _specific_sfs_datatypes = {}
 
     id: int = None
@@ -116,7 +121,11 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
                         if isinstance(related_adapter, list):
                             for adapter in related_adapter:
                                 await adapter.save()
-                            setattr(db_instance, rel.key, [adapter._db_instance for adapter in related_adapter])
+                            setattr(
+                                db_instance,
+                                rel.key,
+                                [adapter._db_instance for adapter in related_adapter],
+                            )
                         else:
                             await related_adapter.save()
                             setattr(db_instance, rel.key, related_adapter._db_instance)
@@ -140,7 +149,9 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
     def _eager_options(cls):
         """Опции для подгрузки связей в одном запросе, чтобы не дергать lazy load в async."""
         rels = cls._db_model.__mapper__.relationships
-        return [selectinload(getattr(cls._db_model, r.key)) for r in rels] if rels else []
+        return (
+            [selectinload(getattr(cls._db_model, r.key)) for r in rels] if rels else []
+        )
 
     @classmethod
     async def load_by_id(cls: Type[T], id: int, use_cache: bool = True) -> Optional[T]:
@@ -156,33 +167,53 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
             return None
 
     @classmethod
-    async def load_one_by(cls: Type[T], use_cache: bool = False, **query_params) -> Optional[T]:
+    async def load_one_by(
+        cls: Type[T], use_cache: bool = False, **query_params
+    ) -> Optional[T]:
         async with _session_ctx() as session:
-            conditions = [getattr(cls._db_model, key) == value for key, value in query_params.items()]
+            conditions = [
+                getattr(cls._db_model, key) == value
+                for key, value in query_params.items()
+            ]
             stmt = select(cls._db_model).where(and_(*conditions))
             opts = cls._eager_options()
             if opts:
                 stmt = stmt.options(*opts)
             result = await session.execute(stmt)
-            db_instance = result.unique().scalar_one_or_none() if opts else result.scalar_one_or_none()
+            db_instance = (
+                result.unique().scalar_one_or_none()
+                if opts
+                else result.scalar_one_or_none()
+            )
             if db_instance:
                 return await cls.from_db_instance(db_instance, session=session)
             return None
 
     @classmethod
-    async def load_all_by(cls: Type[T], use_cache: bool = False, **query_params) -> List[T]:
+    async def load_all_by(
+        cls: Type[T], use_cache: bool = False, **query_params
+    ) -> List[T]:
         async with _session_ctx() as session:
-            conditions = [getattr(cls._db_model, key) == value for key, value in query_params.items()]
+            conditions = [
+                getattr(cls._db_model, key) == value
+                for key, value in query_params.items()
+            ]
             stmt = select(cls._db_model).where(and_(*conditions))
             opts = cls._eager_options()
             if opts:
                 stmt = stmt.options(*opts)
             result = await session.execute(stmt)
-            db_instances = result.unique().scalars().all() if opts else result.scalars().all()
-            return list(await asyncio.gather(*[
-                cls.from_db_instance(db_instance, session=session)
-                for db_instance in db_instances
-            ]))
+            db_instances = (
+                result.unique().scalars().all() if opts else result.scalars().all()
+            )
+            return list(
+                await asyncio.gather(
+                    *[
+                        cls.from_db_instance(db_instance, session=session)
+                        for db_instance in db_instances
+                    ]
+                )
+            )
 
     @classmethod
     async def load_all(cls: Type[T], use_cache: bool = False) -> List[T]:
@@ -192,14 +223,22 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
             if opts:
                 stmt = stmt.options(*opts)
             result = await session.execute(stmt)
-            db_instances = result.unique().scalars().all() if opts else result.scalars().all()
-            return list(await asyncio.gather(*[
-                cls.from_db_instance(db_instance, session=session)
-                for db_instance in db_instances
-            ]))
+            db_instances = (
+                result.unique().scalars().all() if opts else result.scalars().all()
+            )
+            return list(
+                await asyncio.gather(
+                    *[
+                        cls.from_db_instance(db_instance, session=session)
+                        for db_instance in db_instances
+                    ]
+                )
+            )
 
     @classmethod
-    async def from_db_instance(cls: Type[T], db_instance, session: Optional[AsyncSession] = None, visited=None) -> T:
+    async def from_db_instance(
+        cls: Type[T], db_instance, session: Optional[AsyncSession] = None, visited=None
+    ) -> T:
         if visited is None:
             visited = {}
 
@@ -248,7 +287,9 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
                 if adapter_class:
                     if rel.uselist:
                         related_adapters = [
-                            await adapter_class.from_db_instance(obj, session=session, visited=visited)
+                            await adapter_class.from_db_instance(
+                                obj, session=session, visited=visited
+                            )
                             for obj in related_objs
                         ]
                         setattr(instance, rel.key, related_adapters)
@@ -256,11 +297,20 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
                         setattr(
                             instance,
                             rel.key,
-                            await adapter_class.from_db_instance(related_objs[0], session=session, visited=visited)
-                            if related_objs else None,
+                            await adapter_class.from_db_instance(
+                                related_objs[0], session=session, visited=visited
+                            )
+                            if related_objs
+                            else None,
                         )
                 else:
-                    setattr(instance, rel.key, related_objs if rel.uselist else (related_objs[0] if related_objs else None))
+                    setattr(
+                        instance,
+                        rel.key,
+                        related_objs
+                        if rel.uselist
+                        else (related_objs[0] if related_objs else None),
+                    )
         finally:
             if created_session:
                 await session.__aexit__(None, None, None)
@@ -274,11 +324,14 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
 
         instance_id = (self._db_model, self.id)
         if instance_id in visited:
-            return 'REMOVE'
+            return "REMOVE"
 
         visited.add(instance_id)
 
-        data = {field: getattr(self, field) for field in self._db_model.__table__.columns.keys()}
+        data = {
+            field: getattr(self, field)
+            for field in self._db_model.__table__.columns.keys()
+        }
 
         for rel in self._db_model.__mapper__.relationships:
             related_adapter = getattr(self, rel.key, None)
@@ -286,10 +339,18 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
                 if isinstance(related_adapter, list):
                     data[rel.key] = []
                     for adapter in related_adapter:
-                        if (dict_data := adapter.to_dict(visited=visited, enforce_datatypes=enforce_datatypes)) != 'REMOVE':
+                        if (
+                            dict_data := adapter.to_dict(
+                                visited=visited, enforce_datatypes=enforce_datatypes
+                            )
+                        ) != "REMOVE":
                             data[rel.key].append(dict_data)
                 else:
-                    if (dict_data := related_adapter.to_dict(visited=visited, enforce_datatypes=enforce_datatypes)) != 'REMOVE':
+                    if (
+                        dict_data := related_adapter.to_dict(
+                            visited=visited, enforce_datatypes=enforce_datatypes
+                        )
+                    ) != "REMOVE":
                         data[rel.key] = dict_data
 
         if enforce_datatypes:
@@ -312,10 +373,14 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
                     adapter_class = get_adapter_class_for_model(rel.mapper.class_)
                     if adapter_class:
                         if isinstance(value, list):
-                            related_adapters = [await adapter_class.from_dict(item) for item in value]
+                            related_adapters = [
+                                await adapter_class.from_dict(item) for item in value
+                            ]
                             setattr(instance, field, related_adapters)
                         else:
-                            setattr(instance, field, await adapter_class.from_dict(value))
+                            setattr(
+                                instance, field, await adapter_class.from_dict(value)
+                            )
                     else:
                         setattr(instance, field, value)
         await instance.on_load_complete()
@@ -353,11 +418,11 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
             await self.save()
 
     def __repr__(self):
-        fvars = ', '.join([f'{k}={repr(v)}' for k, v in vars(self).items()])
+        fvars = ", ".join([f"{k}={repr(v)}" for k, v in vars(self).items()])
         return f"{self.__class__.__name__}({fvars})"
 
     def __str__(self):
-        fvars = ', '.join([f'{k}={repr(v)}' for k, v in self.to_dict().items()])
+        fvars = ", ".join([f"{k}={repr(v)}" for k, v in self.to_dict().items()])
         return f"{self.__class__.__name__}({fvars})"
 
     async def on_load_complete(self):
@@ -375,11 +440,15 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
     async def to_sfs_object(self) -> SFSObject:
         obj = SFSObject()
         for field in self._db_model.__table__.columns.keys():
-            key = self._game_id_key if field == 'id' else field
+            key = self._game_id_key if field == "id" else field
             val = getattr(self, field)
             if val is None:
                 continue
-            sds = {'id': Long, 'date_created': Long, 'last_updated': Long} | self._specific_sfs_datatypes
+            sds = {
+                "id": Long,
+                "date_created": Long,
+                "last_updated": Long,
+            } | self._specific_sfs_datatypes
             if field in sds:
                 obj.set_item(key, sds.get(field)(name=key, value=val))
             else:
@@ -397,7 +466,7 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
                 val = val_container.get_value()
 
             if field == cls._game_id_key:
-                setattr(instance, 'id', val)
+                setattr(instance, "id", val)
             else:
                 setattr(instance, field, val)
 
@@ -411,5 +480,4 @@ class BaseAdapter(metaclass=BaseAdapterMeta):
     async def update_sfs(self, params: SFSObject) -> SFSObject:
         return params
 
-    async def on_remove(self):
-        ...
+    async def on_remove(self): ...

@@ -2,13 +2,14 @@ import json
 import logging
 from pathlib import Path
 
+# localmodules:start
 from ZewSFS.Types import Int, SFSObject
-from database import BackdropDB
+from database import BackdropDB, _CONTENT_ROOT
 from database.base_adapter import BaseAdapter, _session_ctx, register_adapter
+# localmodules:end
 
 logger = logging.getLogger(__name__)
 
-_CONTENT_ROOT = Path(__file__).resolve().parent.parent / "content" / "base_game_data"
 _BACKDROP_JSON_PATH = _CONTENT_ROOT / "backdrop_data.json"
 
 
@@ -33,6 +34,7 @@ class Backdrop(BaseAdapter):
     async def _ensure_loaded(cls):
         async with _session_ctx() as session:
             from sqlalchemy import select
+
             result = await session.execute(select(BackdropDB).limit(1))
             if result.scalar_one_or_none() is not None:
                 return
@@ -68,22 +70,28 @@ class Backdrop(BaseAdapter):
             inst.island_id = record.get("island_id", 0)
             inst.level = record.get("level", 0)
             inst.view_in_market = record.get("view_in_market", 0)
-            inst.graphic = json.dumps(record.get("graphic", {})) if isinstance(record.get("graphic"), dict) else (record.get("graphic") or "{}")
+            inst.graphic = (
+                json.dumps(record.get("graphic", {}))
+                if isinstance(record.get("graphic"), dict)
+                else (record.get("graphic") or "{}")
+            )
             inst.name = str(record.get("name", "") or "")
             inst.description = str(record.get("description", "") or "")
-            db_rows.append(BackdropDB(
-                id=inst.id,
-                backdrop_id=inst.backdrop_id,
-                cost_coins=inst.cost_coins,
-                cost_diamonds=inst.cost_diamonds,
-                initial=inst.initial,
-                island_id=inst.island_id,
-                level=inst.level,
-                view_in_market=inst.view_in_market,
-                graphic=inst.graphic,
-                name=inst.name,
-                description=inst.description,
-            ))
+            db_rows.append(
+                BackdropDB(
+                    id=inst.id,
+                    backdrop_id=inst.backdrop_id,
+                    cost_coins=inst.cost_coins,
+                    cost_diamonds=inst.cost_diamonds,
+                    initial=inst.initial,
+                    island_id=inst.island_id,
+                    level=inst.level,
+                    view_in_market=inst.view_in_market,
+                    graphic=inst.graphic,
+                    name=inst.name,
+                    description=inst.description,
+                )
+            )
         async with _session_ctx() as session:
             for row in db_rows:
                 session.add(row)

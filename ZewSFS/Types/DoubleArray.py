@@ -3,7 +3,9 @@ from __future__ import annotations
 import io
 import struct
 
+# localmodules:start
 from .BaseType import BaseType
+# localmodules:end
 
 
 class DoubleArray(BaseType):
@@ -39,7 +41,9 @@ class DoubleArray(BaseType):
         """
         result = len(self.get_value()).to_bytes(2, "big")
         for i in self.get_value():
-            result += int.from_bytes(struct.pack("d", i), "little", signed=True).to_bytes(8, "big", signed=True)
+            result += int.from_bytes(
+                struct.pack("d", i), "little", signed=True
+            ).to_bytes(8, "big", signed=True)
         return self.pack_name() + bytes([15]) + result
 
     @staticmethod
@@ -59,8 +63,8 @@ class DoubleArray(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        length = int.from_bytes(buffer.read(2), 'big')
+        length = int.from_bytes(buffer.read(2), "big")
         array = []
         for _ in range(length):
-            array.append(round(struct.unpack('d', buffer.read(8)[::-1])[0], 12))
+            array.append(round(struct.unpack("d", buffer.read(8)[::-1])[0], 12))
         return DoubleArray(name, array)
