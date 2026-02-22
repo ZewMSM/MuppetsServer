@@ -5,9 +5,10 @@ from asyncio import StreamReader, StreamWriter
 
 from ZewSFS.Types import SFSObject
 from ZewSFS.Utils import compile_packet
-from database.player import Player
 
-logger = logging.getLogger('ZewSFS/SFSServer')
+# from database.player import Player
+
+logger = logging.getLogger("ZewSFS/SFSServer")
 
 
 class SFSServerClient:
@@ -24,15 +25,22 @@ class SFSServerClient:
         args (dict): Arguments associated with the client, such as username and password.
     """
 
-    def __init__(self, identifier: str, address: str, reader: 'StreamReader', writer: 'StreamWriter', server):
+    def __init__(
+        self,
+        identifier: str,
+        address: str,
+        reader: "StreamReader",
+        writer: "StreamWriter",
+        server,
+    ):
         self.identifier = identifier
         self.reader = reader
         self.writer = writer
         self.address = address
         self.server = server
-        self.state = 'handshake'
+        self.state = "handshake"
         self.args = {}
-        self.player: 'Player' = None
+        self.player = None
 
         self.server.add_client(self)
         asyncio.create_task(self.on_created())
@@ -47,14 +55,14 @@ class SFSServerClient:
             ConnectionError: If the client disconnects unexpectedly.
         """
         packet_type = await self.reader.read(1)
-        packet_size = b''
+        packet_size = b""
 
         if not packet_type:
             raise ConnectionError
 
-        if packet_type == b'\x88':
+        if packet_type == b"\x88":
             packet_size_len = 4
-        elif packet_type == b'\x80':
+        elif packet_type == b"\x80":
             packet_size_len = 2
         else:
             return
@@ -89,7 +97,7 @@ class SFSServerClient:
             self.writer.write(data)
             await self.writer.drain()
         except ConnectionError:
-            logger.error('Client closed connection, can\'t send!')
+            logger.error("Client closed connection, can't send!")
             self.server.remove_client(self)
             return
 
@@ -98,14 +106,14 @@ class SFSServerClient:
         Sends a handshake response to the client.
         """
         params = SFSObject()
-        params.putInt('ct', 1000000)
-        params.putInt('ms', 8000000)
-        params.putUtfString('tk', '5c4ac8dbfb323e39053dcb3ee261bc93')
+        params.putInt("ct", 1000000)
+        params.putInt("ms", 8000000)
+        params.putUtfString("tk", "5c4ac8dbfb323e39053dcb3ee261bc93")
 
         resp = SFSObject()
-        resp.putByte('c', 0)
-        resp.putShort('a', 0)
-        resp.putSFSObject('p', params)
+        resp.putByte("c", 0)
+        resp.putShort("a", 0)
+        resp.putSFSObject("p", params)
 
         asyncio.create_task(self.send(compile_packet(resp)))
 
@@ -148,15 +156,14 @@ class SFSServerClient:
         packet.putShort("a", 13)
         packet.putSFSObject("p", request)
 
-        logger.info(f'Sending {cmd} to {self.identifier}')
+        logger.info(f"Sending {cmd} to {self.identifier}")
         logger.debug(params)
 
         compiled = compile_packet(packet)
         if cache:
             self.server.cached_requests[cmd] = compiled
-            logger.info(f'Saved {cmd} to cache')
+            logger.info(f"Saved {cmd} to cache")
         asyncio.create_task(self.send(compiled))
-
 
     def set_arg(self, key, value):
         """

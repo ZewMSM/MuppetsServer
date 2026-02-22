@@ -18,7 +18,7 @@ import asyncio
 import logging
 import secrets
 import traceback
-from asyncio import StreamWriter, StreamReader
+from asyncio import StreamReader, StreamWriter
 from collections.abc import Awaitable, Callable, Coroutine
 from typing import Any
 
@@ -26,7 +26,7 @@ from ZewSFS.Server.Router import SFSRouter
 from ZewSFS.Server.ServerClient import SFSServerClient
 from ZewSFS.Types import SFSObject
 
-logger = logging.getLogger('ZewSFS/SFSServer')
+logger = logging.getLogger("ZewSFS/SFSServer")
 
 
 class UnhandledRequest(Exception):
@@ -42,10 +42,10 @@ class UnhandledRequest(Exception):
         super().__init__()
 
     def __repr__(self):
-        return f'UnhandledRequest {self.cmd}'
+        return f"UnhandledRequest {self.cmd}"
 
     def __str__(self):
-        return f'UnhandledRequest {self.cmd}'
+        return f"UnhandledRequest {self.cmd}"
 
 
 async def empty_callback(*args, **kwargs):
@@ -67,15 +67,26 @@ class SFSServer(SFSRouter):
         error_callback (Callable): The callback for handling errors.
         request_handlers (dict): A dictionary of request handlers for specific commands.
     """
-    clients: list['SFSServerClient'] = []
+
+    clients: list["SFSServerClient"] = []
     cached_requests = dict()
 
-    connection_callback: Callable[['SFSServerClient'], Coroutine[Any, Any, bool]] = empty_callback
-    handshake_callback: Callable[['SFSServerClient', 'SFSObject'], Awaitable[None]] = empty_callback
-    login_callback: Callable[['SFSServerClient', str, str, 'SFSObject'], Awaitable[None]] = empty_callback
-    error_callback: Callable[['SFSServerClient', Exception, str], Awaitable[None]] = empty_callback
+    connection_callback: Callable[["SFSServerClient"], Coroutine[Any, Any, bool]] = (
+        empty_callback
+    )
+    handshake_callback: Callable[["SFSServerClient", "SFSObject"], Awaitable[None]] = (
+        empty_callback
+    )
+    login_callback: Callable[
+        ["SFSServerClient", str, str, "SFSObject"], Awaitable[None]
+    ] = empty_callback
+    error_callback: Callable[["SFSServerClient", Exception, str], Awaitable[None]] = (
+        empty_callback
+    )
 
-    def __init__(self, host: str = '0.0.0.0', port: int = 9933, zone_name: str | None = None):
+    def __init__(
+        self, host: str = "0.0.0.0", port: int = 9933, zone_name: str | None = None
+    ):
         self.host = host
         self.port = port
         self.zone_name = zone_name
@@ -116,7 +127,7 @@ class SFSServer(SFSRouter):
         """
         return len(self.get_client_by_identifier(identifier)) > 0
 
-    def add_client(self, client: 'SFSServerClient'):
+    def add_client(self, client: "SFSServerClient"):
         """
         Adds a client to the server.
 
@@ -125,7 +136,7 @@ class SFSServer(SFSRouter):
         """
         self.clients.append(client)
 
-    def remove_client(self, client: 'SFSServerClient'):
+    def remove_client(self, client: "SFSServerClient"):
         """
         Removes a client from the server.
 
@@ -137,7 +148,7 @@ class SFSServer(SFSRouter):
         except:
             ...
 
-    async def _process_request(self, client: 'SFSServerClient', request: 'SFSObject'):
+    async def _process_request(self, client: "SFSServerClient", request: "SFSObject"):
         """
         Processes a request from a client.
 
@@ -145,13 +156,13 @@ class SFSServer(SFSRouter):
             client (SFSServerClient): The client sending the request.
             request (SFSObject): The request data.
         """
-        if client.state == 'handshake':
-            if request.get('c') == b'\x00' and request.get('a') == 0:
+        if client.state == "handshake":
+            if request.get("c") == b"\x00" and request.get("a") == 0:
                 identifier = secrets.token_urlsafe(32)
                 client.identifier = identifier
-                logger.info(f'HandshakeRequest from {client.identifier}')
+                logger.info(f"HandshakeRequest from {client.identifier}")
                 logger.debug(request)
-                client.state = 'login'
+                client.state = "login"
 
                 asyncio.create_task(client.send_handshake())
                 if not await self.handshake_callback(client, request):
@@ -159,64 +170,85 @@ class SFSServer(SFSRouter):
 
             return
 
-        if client.state == 'login':
-            if request.get('c') == b'\x00' and request.get('a') == 1:
-                logger.info(f'LoginRequest from {client.identifier}')
+        if client.state == "login":
+            if request.get("c") == b"\x00" and request.get("a") == 1:
+                logger.info(f"LoginRequest from {client.identifier}")
                 logger.debug(request)
-                params: SFSObject = request.get('p')
-                zone_name = params.get('zn')
-                username = params.get('un')
-                password = params.get('pw')
-                auth_params: SFSObject = params.get('p')
+                params: SFSObject = request.get("p")
+                zone_name = params.get("zn")
+                username = params.get("un")
+                password = params.get("pw")
+                auth_params: SFSObject = params.get("p")
 
-                client.state = 'play'
+                client.state = "play"
 
                 if zone_name != self.zone_name and self.zone_name is not None:
                     return client.kick()
 
-                if not await self.login_callback(client, username, password, auth_params):
+                if not await self.login_callback(
+                    client, username, password, auth_params
+                ):
                     await asyncio.sleep(1)
                     return await client.kick()
 
-                client.set_arg('username', username)
-                client.set_arg('password', password)
+                client.set_arg("username", username)
+                client.set_arg("password", password)
             return
 
-        if client.state == 'play':
-            if request.get('c') == b'\x01' and request.get('a') in (12, 13):
+        if client.state == "play":
+            if request.get("c") == b"\x01" and request.get("a") in (12, 13):
                 try:
                     cmd: str = request.get("p").get("c")
-                    params: 'SFSObject' = request.get("p").get("p")
+                    params: "SFSObject" = request.get("p").get("p")
 
-                    logger.info(f'ExtensionRequest from {client.identifier}: {cmd}')
+                    logger.info(f"ExtensionRequest from {client.identifier}: {cmd}")
                     logger.debug(params)
 
-                    if (cached_response := self.cached_requests.get(cmd, None)) is not None:
-                        logger.info(f'Loaded {cmd} from cache')
+                    if (
+                        cached_response := self.cached_requests.get(cmd, None)
+                    ) is not None:
+                        logger.info(f"Loaded {cmd} from cache")
                         await client.send(cached_response)
                         return
 
                     handler = self.request_handlers.get(cmd)
                     if handler is not None:
                         resp = await handler(client, params)
+                        print(resp)
                         if type(resp) is str:
-                            await client.send_extension(cmd, SFSObject(resp).putBool('success', False).putUtfString(
-                                'message', resp))
+                            await client.send_extension(
+                                cmd,
+                                SFSObject(resp)
+                                .putBool("success", False)
+                                .putUtfString("message", resp),
+                            )
                         elif type(resp) is SFSObject:
-                            await client.send_extension(cmd, resp, cache=cmd in self.cached_requests)
+                            await client.send_extension(
+                                cmd, resp, cache=cmd in self.cached_requests
+                            )
                     else:
-                        logger.warning(f'Unhandled request from {client.identifier}: {cmd}')
-                        raise UnhandledRequest(cmd)
+                        # Как в Legacy default: success=false, те же params
+                        logger.warning(
+                            f"Unhandled request from {client.identifier}: {cmd}"
+                        )
+                        from ZewSFS.Types import SFSObject as SFSObj
+                        default_resp = SFSObj(params) if params else SFSObj()
+                        default_resp.putBool("success", False)
+                        await client.send_extension(cmd, default_resp)
 
                 except (ConnectionError, asyncio.IncompleteReadError) as e:
-                    asyncio.create_task(self.error_callback(client, e, traceback.format_exc()))
+                    asyncio.create_task(
+                        self.error_callback(client, e, traceback.format_exc())
+                    )
                     raise e
                 except Exception as e:
-                    asyncio.create_task(self.error_callback(client, e, traceback.format_exc()))
+                    asyncio.create_task(
+                        self.error_callback(client, e, traceback.format_exc())
+                    )
             else:
-                logger.info(f'Invalid message from {client.identifier}: {request}')
+                logger.info(f"Invalid message from {client.identifier}: {request}")
 
-    async def _handle_connection(self, reader: 'StreamReader', writer: 'StreamWriter'):
+    async def _handle_connection(self, reader: "StreamReader", writer: "StreamWriter"):
         """
         Handles a new client connection.
 
@@ -225,7 +257,7 @@ class SFSServer(SFSRouter):
             writer (StreamWriter): Stream writer for communication.
         """
         addr = writer.get_extra_info("peername")[0]
-        logger.info(f'New connection from {addr}')
+        logger.info(f"New connection from {addr}")
 
         client = SFSServerClient(None, addr, reader, writer, self)
         if not await self.connection_callback(client):
@@ -238,28 +270,30 @@ class SFSServer(SFSRouter):
             ...
         except asyncio.IncompleteReadError:
             ...
-        except Exception as e:
+        except Exception:
             logging.exception(traceback.format_exc())
 
         self.remove_client(client)
-        logger.info(f'Disconnected from {addr}')
+        logger.info(f"Disconnected from {addr}")
         asyncio.create_task(client.kick())
 
     async def serve_forever(self):
         """
         Starts the server and listens for incoming connections.
         """
-        server = await asyncio.start_server(self._handle_connection, self.host, self.port)
+        server = await asyncio.start_server(
+            self._handle_connection, self.host, self.port
+        )
         async with server:
-            logger.info(f'Serving on {self.host}:{self.port}')
+            logger.info(f"Serving on {self.host}:{self.port}")
             while 1:
                 try:
                     await server.serve_forever()
-                except Exception as e:
+                except Exception:
                     await asyncio.sleep(5)
                     logging.exception(traceback.format_exc())
 
-    def include_router(self, router: 'SFSRouter'):
+    def include_router(self, router: "SFSRouter"):
         self.request_handlers |= router.request_handlers
         self.cached_requests |= router.cached_requests
 

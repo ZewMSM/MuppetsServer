@@ -1,4 +1,3 @@
-class GameConfig:
-    allowed_versions = {
-        '4.6.1': '193f6d49-4051-4adc-9949-fa4f4e9fd43a'
-    }
+import os
+
+GAME_SERVER_IP = os.environ.get("GAME_SERVER_IP", "127.0.0.1")

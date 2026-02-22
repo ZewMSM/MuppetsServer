@@ -1,0 +1,699 @@
+{
+    "islands_data": [
+        {
+            "beds": {
+                "levels": [
+                    {
+                        "beds": 4,
+                        "c": 0,
+                        "d": 0,
+                        "t": 0
+                    },
+                    {
+                        "beds": 10,
+                        "c": 150,
+                        "d": 0,
+                        "t": 10
+                    },
+                    {
+                        "beds": 18,
+                        "c": 1000,
+                        "d": 0,
+                        "t": 600
+                    },
+                    {
+                        "beds": 28,
+                        "c": 5000,
+                        "d": 0,
+                        "t": 3600
+                    },
+                    {
+                        "beds": 40,
+                        "c": 10000,
+                        "d": 0,
+                        "t": 7200
+                    },
+                    {
+                        "beds": 60,
+                        "c": 0,
+                        "d": 20,
+                        "t": 7200
+                    }
+                ]
+            },
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "STAGE_01_DESC",
+            "fb_object_id": "470740229660798",
+            "genes": "",
+            "graphic": {
+                "file": "stage01.bin",
+                "grid": "muppet_theatre.bin",
+                "tileset": "tileset_stage01.bin"
+            },
+            "island_id": 1,
+            "last_changed": 1889110984321,
+            "level": 1,
+            "midi": "stage01.mid",
+            "min_server_version": "0.0",
+            "monsters": [
+                {
+                    "instrument": "001_animal.bin",
+                    "monster": 50
+                },
+                {
+                    "instrument": "001_rawlf.bin",
+                    "monster": 51
+                },
+                {
+                    "instrument": "001_floyd.bin",
+                    "monster": 53
+                },
+                {
+                    "instrument": "001_mahna.bin",
+                    "monster": 54
+                },
+                {
+                    "instrument": "001_kermit.bin",
+                    "monster": 55
+                },
+                {
+                    "instrument": "001_piggy.bin",
+                    "monster": 56
+                },
+                {
+                    "instrument": "001_fozzie.bin",
+                    "monster": 57
+                },
+                {
+                    "instrument": "001_sam.bin",
+                    "monster": 58
+                },
+                {
+                    "instrument": "001_gonzo.bin",
+                    "monster": 59
+                },
+                {
+                    "instrument": "001_pots.bin",
+                    "monster": 60
+                },
+                {
+                    "instrument": "001_accoustic.bin",
+                    "monster": 61
+                },
+                {
+                    "instrument": "001_rats.bin",
+                    "monster": 62
+                },
+                {
+                    "instrument": "001_clapper.bin",
+                    "monster": 63
+                },
+                {
+                    "instrument": "001_snowth.bin",
+                    "monster": 64
+                },
+                {
+                    "instrument": "001_twins.bin",
+                    "monster": 65
+                },
+                {
+                    "instrument": "001_zoot.bin",
+                    "monster": 66
+                },
+                {
+                    "instrument": "001_janice.bin",
+                    "monster": 67
+                },
+                {
+                    "instrument": "001_beauregard.bin",
+                    "monster": 68
+                },
+                {
+                    "instrument": "001_muppetman.bin",
+                    "monster": 69
+                }
+            ],
+            "name": "STAGE_01",
+            "status": "enabled",
+            "structures": [
+                {
+                    "instrument": "Time_Machine.bin",
+                    "structure": 124
+                }
+            ]
+        },
+        {
+            "beds": {
+                "levels": [
+                    {
+                        "beds": 4,
+                        "c": 0,
+                        "d": 0,
+                        "t": 0
+                    },
+                    {
+                        "beds": 10,
+                        "c": 15000,
+                        "d": 0,
+                        "t": 28800
+                    },
+                    {
+                        "beds": 18,
+                        "c": 25000,
+                        "d": 0,
+                        "t": 36000
+                    },
+                    {
+                        "beds": 28,
+                        "c": 50000,
+                        "d": 0,
+                        "t": 43200
+                    },
+                    {
+                        "beds": 40,
+                        "c": 75000,
+                        "d": 0,
+                        "t": 50400
+                    },
+                    {
+                        "beds": 60,
+                        "c": 0,
+                        "d": 25,
+                        "t": 50400
+                    }
+                ]
+            },
+            "cost_coins": 200000,
+            "cost_diamonds": 0,
+            "description": "STAGE_02_DESC",
+            "fb_object_id": "196521130496120",
+            "genes": "",
+            "graphic": {
+                "file": "stage02.bin",
+                "grid": "kitchen.bin",
+                "tileset": "tileset_stage02.bin"
+            },
+            "island_id": 2,
+            "last_changed": 1889110984321,
+            "level": 12,
+            "midi": "stage02.mid",
+            "min_server_version": "0.0",
+            "monsters": [
+                {
+                    "instrument": "002_accoustic.bin",
+                    "monster": 80
+                },
+                {
+                    "instrument": "002_animal.bin",
+                    "monster": 81
+                },
+                {
+                    "instrument": "002_beaker.bin",
+                    "monster": 82
+                },
+                {
+                    "instrument": "002_chickens.bin",
+                    "monster": 83
+                },
+                {
+                    "instrument": "002_floyd.bin",
+                    "monster": 84
+                },
+                {
+                    "instrument": "002_gonzo.bin",
+                    "monster": 85
+                },
+                {
+                    "instrument": "002_kermit.bin",
+                    "monster": 86
+                },
+                {
+                    "instrument": "002_pots.bin",
+                    "monster": 87
+                },
+                {
+                    "instrument": "002_rizzo.bin",
+                    "monster": 88
+                },
+                {
+                    "instrument": "002_rowlf.bin",
+                    "monster": 89
+                },
+                {
+                    "instrument": "002_swedishchef.bin",
+                    "monster": 90
+                },
+                {
+                    "instrument": "002_tamborine.bin",
+                    "monster": 91
+                },
+                {
+                    "instrument": "002_twins.bin",
+                    "monster": 92
+                },
+                {
+                    "instrument": "002_veggies.bin",
+                    "monster": 93
+                },
+                {
+                    "instrument": "002_walter.bin",
+                    "monster": 94
+                },
+                {
+                    "instrument": "002_zoot.bin",
+                    "monster": 95
+                },
+                {
+                    "instrument": "002_lou.bin",
+                    "monster": 96
+                },
+                {
+                    "instrument": "002_suggs.bin",
+                    "monster": 97
+                }
+            ],
+            "name": "STAGE_02",
+            "status": "enabled",
+            "structures": [
+                {
+                    "instrument": "Time_Machine.bin",
+                    "structure": 124
+                }
+            ]
+        },
+        {
+            "beds": {
+                "levels": [
+                    {
+                        "beds": 4,
+                        "c": 0,
+                        "d": 0,
+                        "t": 0
+                    },
+                    {
+                        "beds": 10,
+                        "c": 100000,
+                        "d": 0,
+                        "t": 57600
+                    },
+                    {
+                        "beds": 18,
+                        "c": 125000,
+                        "d": 0,
+                        "t": 64800
+                    },
+                    {
+                        "beds": 28,
+                        "c": 150000,
+                        "d": 0,
+                        "t": 72000
+                    },
+                    {
+                        "beds": 40,
+                        "c": 175000,
+                        "d": 0,
+                        "t": 79200
+                    },
+                    {
+                        "beds": 60,
+                        "c": 0,
+                        "d": 30,
+                        "t": 79200
+                    }
+                ]
+            },
+            "cost_coins": 750000,
+            "cost_diamonds": 0,
+            "description": "STAGE_03_DESC",
+            "fb_object_id": "",
+            "genes": "",
+            "graphic": {
+                "file": "stage03.bin",
+                "grid": "rooftop.bin",
+                "tileset": "tileset_stage03.bin"
+            },
+            "island_id": 3,
+            "last_changed": 1889110984321,
+            "level": 17,
+            "midi": "stage03.mid",
+            "min_server_version": "2.0",
+            "monsters": [
+                {
+                    "instrument": "003_animal.bin",
+                    "monster": 100
+                },
+                {
+                    "instrument": "003_beaker.bin",
+                    "monster": 101
+                },
+                {
+                    "instrument": "003_veggies.bin",
+                    "monster": 102
+                },
+                {
+                    "instrument": "003_clapper.bin",
+                    "monster": 103
+                },
+                {
+                    "instrument": "003_keytar.bin",
+                    "monster": 104
+                },
+                {
+                    "instrument": "003_mahna.bin",
+                    "monster": 105
+                },
+                {
+                    "instrument": "003_zoot.bin",
+                    "monster": 106
+                },
+                {
+                    "instrument": "003_drteeth.bin",
+                    "monster": 107
+                },
+                {
+                    "instrument": "003_sam.bin",
+                    "monster": 108
+                },
+                {
+                    "instrument": "003_rawlf.bin",
+                    "monster": 110
+                },
+                {
+                    "instrument": "003_snowth.bin",
+                    "monster": 111
+                },
+                {
+                    "instrument": "003_accoustic.bin",
+                    "monster": 112
+                },
+                {
+                    "instrument": "003_pepe.bin",
+                    "monster": 113
+                },
+                {
+                    "instrument": "003_tamborine.bin",
+                    "monster": 114
+                },
+                {
+                    "instrument": "003_janice.bin",
+                    "monster": 115
+                },
+                {
+                    "instrument": "003_kermit.bin",
+                    "monster": 116
+                },
+                {
+                    "instrument": "003_floyd.bin",
+                    "monster": 117
+                },
+                {
+                    "instrument": "003_gonzo.bin",
+                    "monster": 118
+                }
+            ],
+            "name": "STAGE_03",
+            "status": "enabled",
+            "structures": [
+                {
+                    "instrument": "Time_Machine.bin",
+                    "structure": 124
+                }
+            ]
+        },
+        {
+            "beds": {
+                "levels": [
+                    {
+                        "beds": 4,
+                        "c": 0,
+                        "d": 0,
+                        "t": 0
+                    },
+                    {
+                        "beds": 10,
+                        "c": 275000,
+                        "d": 0,
+                        "t": 86400
+                    },
+                    {
+                        "beds": 18,
+                        "c": 400000,
+                        "d": 0,
+                        "t": 93600
+                    },
+                    {
+                        "beds": 28,
+                        "c": 525000,
+                        "d": 0,
+                        "t": 100800
+                    },
+                    {
+                        "beds": 40,
+                        "c": 650000,
+                        "d": 0,
+                        "t": 108000
+                    },
+                    {
+                        "beds": 60,
+                        "c": 0,
+                        "d": 35,
+                        "t": 108000
+                    }
+                ]
+            },
+            "cost_coins": 1500000,
+            "cost_diamonds": 0,
+            "description": "STAGE_04_DESC",
+            "fb_object_id": "",
+            "genes": "",
+            "graphic": {
+                "file": "stage04.bin",
+                "grid": "ship.bin",
+                "tileset": "tileset_stage04.bin"
+            },
+            "island_id": 4,
+            "last_changed": 1889110984321,
+            "level": 22,
+            "midi": "stage04.mid",
+            "min_server_version": "2.0",
+            "monsters": [
+                {
+                    "instrument": "004_80s_robot.bin",
+                    "monster": 120
+                },
+                {
+                    "instrument": "004_accordion.bin",
+                    "monster": 121
+                },
+                {
+                    "instrument": "004_bass.bin",
+                    "monster": 122
+                },
+                {
+                    "instrument": "004_bongo.bin",
+                    "monster": 123
+                },
+                {
+                    "instrument": "004_camilla.bin",
+                    "monster": 124
+                },
+                {
+                    "instrument": "004_chickens.bin",
+                    "monster": 125
+                },
+                {
+                    "instrument": "004_crazy_harry.bin",
+                    "monster": 126
+                },
+                {
+                    "instrument": "004_fozzie.bin",
+                    "monster": 127
+                },
+                {
+                    "instrument": "004_kermit.bin",
+                    "monster": 128
+                },
+                {
+                    "instrument": "004_newsman.bin",
+                    "monster": 130
+                },
+                {
+                    "instrument": "004_pepe.bin",
+                    "monster": 131
+                },
+                {
+                    "instrument": "004_piggy.bin",
+                    "monster": 132
+                },
+                {
+                    "instrument": "004_rats.bin",
+                    "monster": 133
+                },
+                {
+                    "instrument": "004_rowlf.bin",
+                    "monster": 134
+                },
+                {
+                    "instrument": "004_sam_eagle.bin",
+                    "monster": 135
+                },
+                {
+                    "instrument": "004_tambourine.bin",
+                    "monster": 136
+                },
+                {
+                    "instrument": "004_sweetums.bin",
+                    "monster": 137
+                }
+            ],
+            "name": "STAGE_04",
+            "status": "enabled",
+            "structures": [
+                {
+                    "instrument": "Time_Machine.bin",
+                    "structure": 124
+                }
+            ]
+        },
+        {
+            "beds": {
+                "levels": [
+                    {
+                        "beds": 4,
+                        "c": 0,
+                        "d": 0,
+                        "t": 0
+                    },
+                    {
+                        "beds": 10,
+                        "c": 15000,
+                        "d": 0,
+                        "t": 28800
+                    },
+                    {
+                        "beds": 18,
+                        "c": 25000,
+                        "d": 0,
+                        "t": 36000
+                    },
+                    {
+                        "beds": 28,
+                        "c": 50000,
+                        "d": 0,
+                        "t": 43200
+                    },
+                    {
+                        "beds": 40,
+                        "c": 75000,
+                        "d": 0,
+                        "t": 50400
+                    },
+                    {
+                        "beds": 60,
+                        "c": 0,
+                        "d": 25,
+                        "t": 50400
+                    }
+                ]
+            },
+            "cost_coins": 450000,
+            "cost_diamonds": 0,
+            "description": "STAGE_05_DESC",
+            "fb_object_id": "",
+            "genes": "",
+            "graphic": {
+                "file": "stage05.bin",
+                "grid": "gulag.bin",
+                "tileset": "tileset_stage05.bin"
+            },
+            "island_id": 5,
+            "last_changed": 1889110984321,
+            "level": 14,
+            "midi": "stage05.mid",
+            "min_server_version": "2.0",
+            "monsters": [
+                {
+                    "instrument": "005_animal.bin",
+                    "monster": 140
+                },
+                {
+                    "instrument": "005_beaker.bin",
+                    "monster": 141
+                },
+                {
+                    "instrument": "005_chickens.bin",
+                    "monster": 142
+                },
+                {
+                    "instrument": "005_clapper.bin",
+                    "monster": 143
+                },
+                {
+                    "instrument": "005_constantine.bin",
+                    "monster": 144
+                },
+                {
+                    "instrument": "005_floyd.bin",
+                    "monster": 145
+                },
+                {
+                    "instrument": "005_mahna.bin",
+                    "monster": 146
+                },
+                {
+                    "instrument": "005_piggy.bin",
+                    "monster": 147
+                },
+                {
+                    "instrument": "005_pots.bin",
+                    "monster": 148
+                },
+                {
+                    "instrument": "005_rats.bin",
+                    "monster": 150
+                },
+                {
+                    "instrument": "005_rizzo.bin",
+                    "monster": 151
+                },
+                {
+                    "instrument": "005_rowlf.bin",
+                    "monster": 152
+                },
+                {
+                    "instrument": "005_snowth.bin",
+                    "monster": 153
+                },
+                {
+                    "instrument": "005_swedishchef.bin",
+                    "monster": 154
+                },
+                {
+                    "instrument": "005_sweetums.bin",
+                    "monster": 155
+                },
+                {
+                    "instrument": "005_tambourine.bin",
+                    "monster": 156
+                },
+                {
+                    "instrument": "005_walter.bin",
+                    "monster": 157
+                },
+                {
+                    "instrument": "005_drteeth.bin",
+                    "monster": 158
+                }
+            ],
+            "name": "STAGE_05",
+            "status": "enabled",
+            "structures": [
+                {
+                    "instrument": "Time_Machine.bin",
+                    "structure": 124
+                }
+            ]
+        }
+    ]
+}

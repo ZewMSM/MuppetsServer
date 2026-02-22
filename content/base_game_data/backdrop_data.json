@@ -1,0 +1,355 @@
+{
+    "backdrop_data": [
+        {
+            "backdrop_id": 0,
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE01_BD01_DESC",
+            "graphic": {
+                "file": "stage01_backdrop01.bin",
+                "lighting": "stage01_lighting01.bin",
+                "store": "Store"
+            },
+            "initial": 1,
+            "island_id": 1,
+            "last_changed": 3483448280320,
+            "level": 0,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE01_BD01",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 1,
+            "cost_coins": 1000,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE01_BD02_DESC",
+            "graphic": {
+                "file": "stage01_backdrop02.bin",
+                "lighting": "stage01_lighting02.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 1,
+            "last_changed": 3483448280320,
+            "level": 10,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE01_BD02",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 2,
+            "cost_coins": 0,
+            "cost_diamonds": 10,
+            "description": "BACKDROP_STAGE01_BD03_DESC",
+            "graphic": {
+                "file": "stage01_backdrop03.bin",
+                "lighting": "stage01_lighting03.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 1,
+            "last_changed": 3483448280320,
+            "level": 13,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE01_BD03",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 4,
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE02_BD01_DESC",
+            "graphic": {
+                "file": "stage02_backdrop01.bin",
+                "lighting": "stage02_lighting01.bin",
+                "store": "Store"
+            },
+            "initial": 1,
+            "island_id": 2,
+            "last_changed": 3483448280320,
+            "level": 0,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE02_BD01",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 5,
+            "cost_coins": 2500,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE02_BD02_DESC",
+            "graphic": {
+                "file": "stage02_backdrop02.bin",
+                "lighting": "stage02_lighting02.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 2,
+            "last_changed": 3483448280320,
+            "level": 13,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE02_BD02",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 6,
+            "cost_coins": 0,
+            "cost_diamonds": 15,
+            "description": "BACKDROP_STAGE02_BD03_DESC",
+            "graphic": {
+                "file": "stage02_backdrop03.bin",
+                "lighting": "stage02_lighting03.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 2,
+            "last_changed": 3483448280320,
+            "level": 18,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE02_BD03",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 8,
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE03_BD01_DESC",
+            "graphic": {
+                "file": "stage03_backdrop01.bin",
+                "lighting": "stage03_lighting01.bin",
+                "store": "Store"
+            },
+            "initial": 1,
+            "island_id": 3,
+            "last_changed": 110720,
+            "level": 0,
+            "name": "BACKDROP_STAGE03_BD01",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 9,
+            "cost_coins": 25000,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE03_BD02_DESC",
+            "graphic": {
+                "file": "stage03_backdrop02.bin",
+                "lighting": "stage03_lighting02.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 110720,
+            "level": 18,
+            "name": "BACKDROP_STAGE03_BD02",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 10,
+            "cost_coins": 0,
+            "cost_diamonds": 20,
+            "description": "BACKDROP_STAGE03_BD03_DESC",
+            "graphic": {
+                "file": "stage03_backdrop03.bin",
+                "lighting": "stage03_lighting03.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 110720,
+            "level": 20,
+            "name": "BACKDROP_STAGE03_BD03",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 11,
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE04_BD01_DESC",
+            "graphic": {
+                "file": "stage04_backdrop01.bin",
+                "lighting": "stage04_lighting01.bin",
+                "store": "Store"
+            },
+            "initial": 1,
+            "island_id": 4,
+            "last_changed": 110720,
+            "level": 0,
+            "name": "BACKDROP_STAGE04_BD01",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 12,
+            "cost_coins": 250000,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE04_BD02_DESC",
+            "graphic": {
+                "file": "stage04_backdrop02.bin",
+                "lighting": "stage04_lighting02.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 4,
+            "last_changed": 110720,
+            "level": 23,
+            "name": "BACKDROP_STAGE04_BD02",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 13,
+            "cost_coins": 0,
+            "cost_diamonds": 25,
+            "description": "BACKDROP_STAGE04_BD03_DESC",
+            "graphic": {
+                "file": "stage04_backdrop03.bin",
+                "lighting": "stage04_lighting03.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 4,
+            "last_changed": 110720,
+            "level": 25,
+            "name": "BACKDROP_STAGE04_BD03",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 14,
+            "cost_coins": 0,
+            "cost_diamonds": 10,
+            "description": "BACKDROP_STAGE01_BDHAL_DESC",
+            "graphic": {
+                "file": "stage01_backdrop_halloween.bin",
+                "lighting": "stage01_lightinghal.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 1,
+            "last_changed": 3483448280320,
+            "level": 13,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE01_BDHAL",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 15,
+            "cost_coins": 0,
+            "cost_diamonds": 15,
+            "description": "BACKDROP_STAGE02_BDTKS_DESC",
+            "graphic": {
+                "file": "stage02_backdrop_thanksgiving.bin",
+                "lighting": "stage02_lightingthanks.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 2,
+            "last_changed": 3483448280320,
+            "level": 18,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE02_BDTKS",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 16,
+            "cost_coins": 0,
+            "cost_diamonds": 20,
+            "description": "BACKDROP_STAGE03_BDWTR01_DESC",
+            "graphic": {
+                "file": "stage03_backdrop_xmas_01.bin",
+                "lighting": "stage03_lighting01xmas.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 110720,
+            "level": 17,
+            "name": "BACKDROP_STAGE03_BDWTR01",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 17,
+            "cost_coins": 0,
+            "cost_diamonds": 20,
+            "description": "BACKDROP_STAGE03_BDWTR02_DESC",
+            "graphic": {
+                "file": "stage03_backdrop_xmas_02.bin",
+                "lighting": "stage03_lighting02xmas.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 110720,
+            "level": 18,
+            "name": "BACKDROP_STAGE03_BDWTR02",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 18,
+            "cost_coins": 0,
+            "cost_diamonds": 20,
+            "description": "BACKDROP_STAGE03_BDWTR03_DESC",
+            "graphic": {
+                "file": "stage03_backdrop_xmas_03.bin",
+                "lighting": "stage03_lighting03xmas.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 110720,
+            "level": 20,
+            "name": "BACKDROP_STAGE03_BDWTR03",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 19,
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE05_BD01_DESC",
+            "graphic": {
+                "file": "stage05_backdrop01.bin",
+                "lighting": "stage05_lighting01.bin",
+                "store": "Store"
+            },
+            "initial": 1,
+            "island_id": 5,
+            "last_changed": 3483448280320,
+            "level": 0,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE05_BD01",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 20,
+            "cost_coins": 20000,
+            "cost_diamonds": 0,
+            "description": "BACKDROP_STAGE05_BD02_DESC",
+            "graphic": {
+                "file": "stage05_backdrop02.bin",
+                "lighting": "stage05_lighting02.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 5,
+            "last_changed": 3483448280320,
+            "level": 15,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE05_BD02",
+            "view_in_market": 1
+        },
+        {
+            "backdrop_id": 21,
+            "cost_coins": 0,
+            "cost_diamonds": 15,
+            "description": "BACKDROP_STAGE05_BD03_DESC",
+            "graphic": {
+                "file": "stage05_backdrop03.bin",
+                "lighting": "stage05_lighting03.bin",
+                "store": "Store"
+            },
+            "initial": 0,
+            "island_id": 5,
+            "last_changed": 3483448280320,
+            "level": 17,
+            "min_server_version": "0.0",
+            "name": "BACKDROP_STAGE05_BD03",
+            "view_in_market": 1
+        }
+    ]
+}

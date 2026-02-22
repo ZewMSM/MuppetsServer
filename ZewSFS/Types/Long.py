@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+
 from .BaseType import BaseType
 
 
@@ -31,7 +32,11 @@ class Long(BaseType):
         Returns:
             bytes: The packed name of the object followed by a byte representing the long value.
         """
-        return self.pack_name() + bytes([5]) + self.get_value().to_bytes(8, "big", signed=True)
+        return (
+            self.pack_name()
+            + bytes([5])
+            + self.get_value().to_bytes(8, "big", signed=True)
+        )
 
     @staticmethod
     def unpack(buffer: io.BytesIO | bytes, name: str | None = None) -> Long:
@@ -50,4 +55,4 @@ class Long(BaseType):
         if isinstance(name, bool) and name:
             name = BaseType.unpack_name(buffer)
 
-        return Long(name, int.from_bytes(buffer.read(8), 'big', signed=True))
+        return Long(name, int.from_bytes(buffer.read(8), "big", signed=True))

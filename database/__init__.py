@@ -1,29 +1,28 @@
 import logging
+from os import environ, makedirs
+from pathlib import Path
 
-import redis.asyncio as aioredis
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
-
-from os import environ
 
 from database.db_classes import *
 
 logger = logging.getLogger('Database')
-engine = create_async_engine(f'postgresql+asyncpg://{environ.get("POSTGRES_USER")}:{environ.get("POSTGRES_PASSWD")}@'
-                             f'{environ.get("POSTGRES_HOST")}:{environ.get("POSTGRES_PORT")}/{environ.get("POSTGRES_NAME")}', echo=False,
-                             pool_size=50,  # Основной пул соединений
-                             max_overflow=100,  # Дополнительные соединения сверх пула
-                             pool_timeout=30,  # Время ожидания соединения (в секундах)
-                             )
+
+_database_path = environ.get("DATABASE_PATH", "muppets.sqlite")
+if _database_path != ":memory:" and not Path(_database_path).is_absolute():
+    _database_path = str(Path.cwd() / _database_path)
+engine = create_async_engine(
+    f"sqlite+aiosqlite:///{_database_path}",
+    echo=False,
+    connect_args={"check_same_thread": False},
+)
 Session = async_sessionmaker(bind=engine, expire_on_commit=False)
-RedisSession = aioredis.Redis(host=environ.get("REDIS_GAME_HOST"), port=int(environ.get("REDIS_GAME_PORT")))
 
 
 async def init_database():
-    global Session, engine
-
     logger.info("Initializing database...")
-
+    db_path = Path(_database_path)
+    if db_path != Path("-") and not str(_database_path).startswith(":memory:"):
+        db_path.parent.mkdir(parents=True, exist_ok=True)
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
-    await engine.dispose()

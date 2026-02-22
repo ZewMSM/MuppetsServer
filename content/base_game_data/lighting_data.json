@@ -1,0 +1,373 @@
+{
+    "lighting_data": [
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE01_LIGHT01_DESC",
+            "graphic": {
+                "file": "stage01_lighting01.bin",
+                "storeAnim": "lighting01",
+                "storeFile": "stage01_storelights.bin"
+            },
+            "initial": 1,
+            "island_id": 1,
+            "last_changed": 3483499280320,
+            "level": 0,
+            "lighting_id": 0,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE01_LIGHT01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 1500,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE01_LIGHT02_DESC",
+            "graphic": {
+                "file": "stage01_lighting02.bin",
+                "storeAnim": "lighting02",
+                "storeFile": "stage01_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 1,
+            "last_changed": 3483499280320,
+            "level": 11,
+            "lighting_id": 1,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE01_LIGHT02",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 10,
+            "description": "LIGHTING_STAGE01_LIGHT03_DESC",
+            "graphic": {
+                "file": "stage01_lighting03.bin",
+                "storeAnim": "lighting03",
+                "storeFile": "stage01_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 1,
+            "last_changed": 3483499280320,
+            "level": 14,
+            "lighting_id": 2,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE01_LIGHT03",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE02_LIGHT01_DESC",
+            "graphic": {
+                "file": "stage02_lighting01.bin",
+                "storeAnim": "lighting01",
+                "storeFile": "stage02_storelights.bin"
+            },
+            "initial": 1,
+            "island_id": 2,
+            "last_changed": 3483499280320,
+            "level": 0,
+            "lighting_id": 3,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE02_LIGHT01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE03_LIGHT01_DESC",
+            "graphic": {
+                "file": "stage03_lighting01.bin",
+                "storeAnim": "lighting01",
+                "storeFile": "stage03_storelights.bin"
+            },
+            "initial": 1,
+            "island_id": 3,
+            "last_changed": 42949588324294967295,
+            "level": 0,
+            "lighting_id": 4,
+            "name": "LIGHTING_STAGE03_LIGHT01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 50000,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE02_LIGHT02_DESC",
+            "graphic": {
+                "file": "stage02_lighting02.bin",
+                "storeAnim": "lighting02",
+                "storeFile": "stage02_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 2,
+            "last_changed": 3483499280320,
+            "level": 14,
+            "lighting_id": 5,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE02_LIGHT02",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 15,
+            "description": "LIGHTING_STAGE02_LIGHT03_DESC",
+            "graphic": {
+                "file": "stage02_lighting03.bin",
+                "storeAnim": "lighting03",
+                "storeFile": "stage02_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 2,
+            "last_changed": 3483499280320,
+            "level": 17,
+            "lighting_id": 6,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE02_LIGHT03",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 150000,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE03_LIGHT02_DESC",
+            "graphic": {
+                "file": "stage03_lighting02.bin",
+                "storeAnim": "lighting02",
+                "storeFile": "stage03_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 42949588324294967295,
+            "level": 22,
+            "lighting_id": 7,
+            "name": "LIGHTING_STAGE03_LIGHT02",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 20,
+            "description": "LIGHTING_STAGE03_LIGHT03_DESC",
+            "graphic": {
+                "file": "stage03_lighting03.bin",
+                "storeAnim": "lighting03",
+                "storeFile": "stage03_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 42949588324294967295,
+            "level": 25,
+            "lighting_id": 8,
+            "name": "LIGHTING_STAGE03_LIGHT01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE04_LIGHT01_DESC",
+            "graphic": {
+                "file": "stage04_lighting01.bin",
+                "storeAnim": "lighting01",
+                "storeFile": "stage04_storelights.bin"
+            },
+            "initial": 1,
+            "island_id": 4,
+            "last_changed": 42949588324294967295,
+            "level": 0,
+            "lighting_id": 9,
+            "name": "LIGHTING_STAGE04_LIGHT01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 500000,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE04_LIGHT02_DESC",
+            "graphic": {
+                "file": "stage04_lighting02.bin",
+                "storeAnim": "lighting02",
+                "storeFile": "stage04_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 4,
+            "last_changed": 42949588324294967295,
+            "level": 25,
+            "lighting_id": 10,
+            "name": "LIGHTING_STAGE04_LIGHT02",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 25,
+            "description": "LIGHTING_STAGE04_LIGHT03_DESC",
+            "graphic": {
+                "file": "stage04_lighting03.bin",
+                "storeAnim": "lighting03",
+                "storeFile": "stage04_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 4,
+            "last_changed": 42949588324294967295,
+            "level": 28,
+            "lighting_id": 11,
+            "name": "LIGHTING_STAGE04_LIGHT01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 10,
+            "description": "LIGHTING_STAGE01_LIGHTHAL_DESC",
+            "graphic": {
+                "file": "stage01_lightinghal.bin",
+                "storeAnim": "lightinghal",
+                "storeFile": "stage01_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 1,
+            "last_changed": 3483499280320,
+            "level": 14,
+            "lighting_id": 12,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE01_LIGHTHAL",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 15,
+            "description": "LIGHTING_STAGE02_LIGHTTKS_DESC",
+            "graphic": {
+                "file": "stage02_lightingthanks.bin",
+                "storeAnim": "lightingthanks",
+                "storeFile": "stage02_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 2,
+            "last_changed": 3483499280320,
+            "level": 17,
+            "lighting_id": 13,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE02_LIGHTTKS",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 20,
+            "description": "LIGHTING_STAGE03_LIGHTWTR01_DESC",
+            "graphic": {
+                "file": "stage03_lighting01xmas.bin",
+                "storeAnim": "lighting01",
+                "storeFile": "stage03_storelightsxmas.bin"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 42949588324294967295,
+            "level": 22,
+            "lighting_id": 14,
+            "name": "LIGHTING_STAGE03_LIGHTWTR01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 25,
+            "description": "LIGHTING_STAGE03_LIGHTWTR02_DESC",
+            "graphic": {
+                "file": "stage03_lighting02xmas.bin",
+                "storeAnim": "lighting02",
+                "storeFile": "stage03_storelightsxmas.bin"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 42949588324294967295,
+            "level": 22,
+            "lighting_id": 15,
+            "name": "LIGHTING_STAGE03_LIGHTWTR02",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 30,
+            "description": "LIGHTING_STAGE03_LIGHTWTR03_DESC",
+            "graphic": {
+                "file": "stage03_lighting03xmas.bin",
+                "storeAnim": "lighting03",
+                "storeFile": "stage03_storelightsxmas.bin"
+            },
+            "initial": 0,
+            "island_id": 3,
+            "last_changed": 42949588324294967295,
+            "level": 22,
+            "lighting_id": 16,
+            "name": "LIGHTING_STAGE03_LIGHTWTR03",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE05_LIGHT01_DESC",
+            "graphic": {
+                "file": "stage05_lighting01.bin",
+                "storeAnim": "lighting01",
+                "storeFile": "stage05_storelights.bin"
+            },
+            "initial": 1,
+            "island_id": 5,
+            "last_changed": 3483499280320,
+            "level": 0,
+            "lighting_id": 17,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE02_LIGHT01",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 20000,
+            "cost_diamonds": 0,
+            "description": "LIGHTING_STAGE05_LIGHT02_DESC",
+            "graphic": {
+                "file": "stage05_lighting02.bin",
+                "storeAnim": "lighting02",
+                "storeFile": "stage05_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 5,
+            "last_changed": 3483499280320,
+            "level": 18,
+            "lighting_id": 18,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE05_LIGHT02",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 15,
+            "description": "LIGHTING_STAGE05_LIGHT03_DESC",
+            "graphic": {
+                "file": "stage05_lighting03.bin",
+                "storeAnim": "lighting03",
+                "storeFile": "stage05_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 5,
+            "last_changed": 3483499280320,
+            "level": 19,
+            "lighting_id": 19,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE05_LIGHT03",
+            "view_in_market": 1
+        },
+        {
+            "cost_coins": 0,
+            "cost_diamonds": 50,
+            "description": "LIGHTING_STAGE05_LIGHT04_DESC",
+            "graphic": {
+                "file": "stage05_lighting04.bin",
+                "storeAnim": "lighting04",
+                "storeFile": "stage05_storelights.bin"
+            },
+            "initial": 0,
+            "island_id": 5,
+            "last_changed": 3483499280320,
+            "level": 19,
+            "lighting_id": 20,
+            "min_server_version": "0.0",
+            "name": "LIGHTING_STAGE05_LIGHT04",
+            "view_in_market": 1
+        }
+    ]
+}

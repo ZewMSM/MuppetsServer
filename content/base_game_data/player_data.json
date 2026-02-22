@@ -1,0 +1,164 @@
+{
+    "player_object": {
+        "coins": 100000000,
+        "diamonds": 9000,
+        "food": 30000,
+        "xp": 1,
+        "level": 30,
+        "user_id": 1000,
+        "display_name": "MSM Hacks",
+        "bbb_id": 1000,
+        "fb_invite_reward": 1,
+        "twitter_invite_reward": 1,
+        "email_invite_reward": 1,
+        "referral": 1,
+        "last_login": 0,
+        "last_fb_post_reward": 1,
+        "daily_reward_level": 1,
+        "third_party_ads": false,
+        "viewable_ads": [],
+        "active_island": 105,
+        "islands": [
+            {
+                "user_island_id": 101,
+                "island": 1,
+                "type": 1,
+                "user": 1000,
+                "monsters": [
+                    {
+                        "pos_x": 20,
+                        "pos_y": 10,
+                        "user_monster_id": 50,
+                        "monster": 50,
+                        "user_island_id": 101
+                    },
+                    {
+                        "pos_x": 24,
+                        "pos_y": 10,
+                        "user_monster_id": 51,
+                        "monster": 51,
+                        "user_island_id": 101
+                    }
+                ],
+                "structures": [
+                    {
+                        "pos_x": 32,
+                        "pos_y": 14,
+                        "user_structure_id": 124,
+                        "structure": 124,
+                        "user_island_id": 101
+                    }
+                ]
+            },
+            {
+                "user_island_id": 102,
+                "island": 2,
+                "type": 2,
+                "user": 1000,
+                "monsters": [
+                    {
+                        "pos_x": 40,
+                        "pos_y": 18,
+                        "user_monster_id": 84,
+                        "monster": 84,
+                        "user_island_id": 102
+                    },
+                    {
+                        "pos_x": 40,
+                        "pos_y": 14,
+                        "user_monster_id": 89,
+                        "monster": 89,
+                        "user_island_id": 102
+                    },
+                    {
+                        "pos_x": 36,
+                        "pos_y": 12,
+                        "user_monster_id": 81,
+                        "monster": 81,
+                        "user_island_id": 102
+                    }
+                ],
+                "structures": []
+            },
+            {
+                "user_island_id": 103,
+                "island": 3,
+                "type": 3,
+                "user": 1000,
+                "monsters": [
+                    {
+                        "pos_x": 40,
+                        "pos_y": 18,
+                        "user_monster_id": 117,
+                        "monster": 117,
+                        "user_island_id": 103
+                    },
+                    {
+                        "pos_x": 40,
+                        "pos_y": 14,
+                        "user_monster_id": 118,
+                        "monster": 118,
+                        "user_island_id": 103
+                    }
+                ],
+                "structures": []
+            },
+            {
+                "user_island_id": 104,
+                "island": 4,
+                "type": 4,
+                "user": 1000,
+                "monsters": [],
+                "structures": []
+            },
+            {
+                "user_island_id": 105,
+                "island": 5,
+                "type": 5,
+                "user": 1000,
+                "monsters": [
+                    {
+                        "pos_x": 40,
+                        "pos_y": 18,
+                        "user_monster_id": 148,
+                        "monster": 148,
+                        "user_island_id": 105
+                    },
+                    {
+                        "pos_x": 40,
+                        "pos_y": 14,
+                        "user_monster_id": 155,
+                        "monster": 155,
+                        "user_island_id": 105
+                    }
+                ],
+                "structures": [
+                    {
+                        "pos_x": 32,
+                        "pos_y": 14,
+                        "user_structure_id": 324,
+                        "structure": 324,
+                        "user_island_id": 105
+                    },
+                    {
+                        "pos_x": 32,
+                        "pos_y": 10,
+                        "user_structure_id": 316,
+                        "structure": 316,
+                        "user_island_id": 105
+                    }
+                ]
+            }
+        ],
+        "backdrops": [
+            6
+        ],
+        "lighting": [
+            6
+        ],
+        "likeUnlocks": [],
+        "breedingUnlocks": [],
+        "achievements": [],
+        "hidden_objects": []
+    }
+}

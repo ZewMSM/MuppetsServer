@@ -1,10 +1,10 @@
-asyncpg
+aiosqlite
 fastapi
 SQLAlchemy
 uvicorn
-redis
 pycryptodome
 python-multipart
 aiohttp
 greenlet
 uvloop
+python-dotenv

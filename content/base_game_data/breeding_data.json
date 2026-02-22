@@ -1,0 +1,634 @@
+{
+    "breedingcombo_data": [
+        {
+            "breeding_combination_id": 2000,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 53,
+            "monster_2": 51,
+            "probability": 100,
+            "result": 65
+        },
+        {
+            "breeding_combination_id": 2001,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 50,
+            "monster_2": 51,
+            "probability": 100,
+            "result": 63
+        },
+        {
+            "breeding_combination_id": 2002,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 58,
+            "monster_2": 50,
+            "probability": 100,
+            "result": 60
+        },
+        {
+            "breeding_combination_id": 2003,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 53,
+            "monster_2": 58,
+            "probability": 100,
+            "result": 61
+        },
+        {
+            "breeding_combination_id": 2004,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 53,
+            "monster_2": 50,
+            "probability": 100,
+            "result": 64
+        },
+        {
+            "breeding_combination_id": 2005,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 51,
+            "monster_2": 58,
+            "probability": 100,
+            "result": 62
+        },
+        {
+            "breeding_combination_id": 2006,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 61,
+            "monster_2": 56,
+            "probability": 30,
+            "result": 55
+        },
+        {
+            "breeding_combination_id": 2007,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 65,
+            "monster_2": 63,
+            "probability": 45,
+            "result": 56
+        },
+        {
+            "breeding_combination_id": 2008,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 64,
+            "monster_2": 62,
+            "probability": 45,
+            "result": 59
+        },
+        {
+            "breeding_combination_id": 2009,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 64,
+            "monster_2": 60,
+            "probability": 45,
+            "result": 54
+        },
+        {
+            "breeding_combination_id": 2010,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 59,
+            "monster_2": 61,
+            "probability": 30,
+            "result": 57
+        },
+        {
+            "breeding_combination_id": 2011,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 60,
+            "monster_2": 62,
+            "probability": 60,
+            "result": 66
+        },
+        {
+            "breeding_combination_id": 2012,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 90,
+            "monster_2": 84,
+            "probability": 100,
+            "result": 93
+        },
+        {
+            "breeding_combination_id": 2013,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 81,
+            "monster_2": 90,
+            "probability": 100,
+            "result": 87
+        },
+        {
+            "breeding_combination_id": 2014,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 84,
+            "monster_2": 89,
+            "probability": 100,
+            "result": 80
+        },
+        {
+            "breeding_combination_id": 2015,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 89,
+            "monster_2": 90,
+            "probability": 100,
+            "result": 83
+        },
+        {
+            "breeding_combination_id": 2016,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 84,
+            "monster_2": 81,
+            "probability": 100,
+            "result": 91
+        },
+        {
+            "breeding_combination_id": 2017,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 89,
+            "monster_2": 81,
+            "probability": 100,
+            "result": 92
+        },
+        {
+            "breeding_combination_id": 2018,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 80,
+            "monster_2": 94,
+            "probability": 15,
+            "result": 86
+        },
+        {
+            "breeding_combination_id": 2019,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 91,
+            "monster_2": 85,
+            "probability": 15,
+            "result": 94
+        },
+        {
+            "breeding_combination_id": 2020,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 95,
+            "monster_2": 92,
+            "probability": 15,
+            "result": 82
+        },
+        {
+            "breeding_combination_id": 2021,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 93,
+            "monster_2": 87,
+            "probability": 15,
+            "result": 95
+        },
+        {
+            "breeding_combination_id": 2022,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 83,
+            "monster_2": 80,
+            "probability": 15,
+            "result": 85
+        },
+        {
+            "breeding_combination_id": 2023,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 85,
+            "monster_2": 93,
+            "probability": 15,
+            "result": 88
+        },
+        {
+            "breeding_combination_id": 2024,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 110,
+            "monster_2": 108,
+            "probability": 100,
+            "result": 103
+        },
+        {
+            "breeding_combination_id": 2025,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 100,
+            "monster_2": 110,
+            "probability": 100,
+            "result": 111
+        },
+        {
+            "breeding_combination_id": 2026,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 110,
+            "monster_2": 107,
+            "probability": 100,
+            "result": 102
+        },
+        {
+            "breeding_combination_id": 2027,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 102,
+            "monster_2": 111,
+            "probability": 15,
+            "result": 106
+        },
+        {
+            "breeding_combination_id": 2028,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 107,
+            "monster_2": 108,
+            "probability": 100,
+            "result": 104
+        },
+        {
+            "breeding_combination_id": 2029,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 104,
+            "monster_2": 111,
+            "probability": 10,
+            "result": 113
+        },
+        {
+            "breeding_combination_id": 2030,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 114,
+            "monster_2": 103,
+            "probability": 10,
+            "result": 115
+        },
+        {
+            "breeding_combination_id": 2031,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 104,
+            "monster_2": 112,
+            "probability": 15,
+            "result": 105
+        },
+        {
+            "breeding_combination_id": 2032,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 114,
+            "monster_2": 111,
+            "probability": 100,
+            "result": 110
+        },
+        {
+            "breeding_combination_id": 2033,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 106,
+            "monster_2": 102,
+            "probability": 15,
+            "result": 101
+        },
+        {
+            "breeding_combination_id": 2034,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 112,
+            "monster_2": 101,
+            "probability": 15,
+            "result": 116
+        },
+        {
+            "breeding_combination_id": 2035,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 107,
+            "monster_2": 100,
+            "probability": 100,
+            "result": 114
+        },
+        {
+            "breeding_combination_id": 2036,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 108,
+            "monster_2": 100,
+            "probability": 100,
+            "result": 112
+        },
+        {
+            "breeding_combination_id": 2037,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 115,
+            "monster_2": 116,
+            "probability": 7,
+            "result": 117
+        },
+        {
+            "breeding_combination_id": 2038,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 55,
+            "monster_2": 53,
+            "probability": 7,
+            "result": 67
+        },
+        {
+            "breeding_combination_id": 2039,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 113,
+            "monster_2": 105,
+            "probability": 7,
+            "result": 118
+        },
+        {
+            "breeding_combination_id": 2040,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 66,
+            "monster_2": 57,
+            "probability": 7,
+            "result": 68
+        },
+        {
+            "breeding_combination_id": 2041,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 88,
+            "monster_2": 86,
+            "probability": 7,
+            "result": 96
+        },
+        {
+            "breeding_combination_id": 2042,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 94,
+            "monster_2": 82,
+            "probability": 7,
+            "result": 97
+        },
+        {
+            "breeding_combination_id": 2043,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 120,
+            "monster_2": 134,
+            "probability": 100,
+            "result": 125
+        },
+        {
+            "breeding_combination_id": 2044,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 120,
+            "monster_2": 135,
+            "probability": 100,
+            "result": 136
+        },
+        {
+            "breeding_combination_id": 2045,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 134,
+            "monster_2": 135,
+            "probability": 100,
+            "result": 121
+        },
+        {
+            "breeding_combination_id": 2046,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 130,
+            "monster_2": 120,
+            "probability": 100,
+            "result": 123
+        },
+        {
+            "breeding_combination_id": 2047,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 134,
+            "monster_2": 130,
+            "probability": 100,
+            "result": 122
+        },
+        {
+            "breeding_combination_id": 2048,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 135,
+            "monster_2": 130,
+            "probability": 100,
+            "result": 133
+        },
+        {
+            "breeding_combination_id": 2049,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 136,
+            "monster_2": 121,
+            "probability": 15,
+            "result": 132
+        },
+        {
+            "breeding_combination_id": 2050,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 136,
+            "monster_2": 125,
+            "probability": 10,
+            "result": 124
+        },
+        {
+            "breeding_combination_id": 2051,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 131,
+            "monster_2": 133,
+            "probability": 10,
+            "result": 126
+        },
+        {
+            "breeding_combination_id": 2052,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 125,
+            "monster_2": 123,
+            "probability": 10,
+            "result": 131
+        },
+        {
+            "breeding_combination_id": 2053,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 132,
+            "monster_2": 122,
+            "probability": 10,
+            "result": 128
+        },
+        {
+            "breeding_combination_id": 2054,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 124,
+            "monster_2": 121,
+            "probability": 15,
+            "result": 127
+        },
+        {
+            "breeding_combination_id": 2055,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 126,
+            "monster_2": 127,
+            "probability": 7,
+            "result": 137
+        },
+        {
+            "breeding_combination_id": 2056,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 154,
+            "monster_2": 140,
+            "probability": 100,
+            "result": 142
+        },
+        {
+            "breeding_combination_id": 2057,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 140,
+            "monster_2": 145,
+            "probability": 100,
+            "result": 156
+        },
+        {
+            "breeding_combination_id": 2058,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 152,
+            "monster_2": 140,
+            "probability": 100,
+            "result": 153
+        },
+        {
+            "breeding_combination_id": 2059,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 154,
+            "monster_2": 145,
+            "probability": 100,
+            "result": 143
+        },
+        {
+            "breeding_combination_id": 2060,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 154,
+            "monster_2": 152,
+            "probability": 100,
+            "result": 148
+        },
+        {
+            "breeding_combination_id": 2061,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 145,
+            "monster_2": 152,
+            "probability": 100,
+            "result": 150
+        },
+        {
+            "breeding_combination_id": 2062,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 143,
+            "monster_2": 153,
+            "probability": 10,
+            "result": 151
+        },
+        {
+            "breeding_combination_id": 2063,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 156,
+            "monster_2": 142,
+            "probability": 15,
+            "result": 146
+        },
+        {
+            "breeding_combination_id": 2064,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 150,
+            "monster_2": 148,
+            "probability": 10,
+            "result": 155
+        },
+        {
+            "breeding_combination_id": 2065,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 143,
+            "monster_2": 155,
+            "probability": 10,
+            "result": 157
+        },
+        {
+            "breeding_combination_id": 2066,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 156,
+            "monster_2": 146,
+            "probability": 15,
+            "result": 147
+        },
+        {
+            "breeding_combination_id": 2067,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 150,
+            "monster_2": 151,
+            "probability": 10,
+            "result": 141
+        },
+        {
+            "breeding_combination_id": 2068,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 147,
+            "monster_2": 157,
+            "probability": 10,
+            "result": 144
+        },
+        {
+            "breeding_combination_id": 2069,
+            "last_changed": 1889021984321,
+            "modifier": 1.0,
+            "monster_1": 144,
+            "monster_2": 141,
+            "probability": 7,
+            "result": 158
+        }
+    ]
+}

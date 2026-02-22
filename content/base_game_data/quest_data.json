@@ -1,0 +1,21 @@
+{
+  
+  "result": [
+    {
+      "comment": "Used to progress tutorial",
+      "description": "BUY_ANIMAL",
+      "goals": "[ { \"monster\" : 50, \"eval\" : \"==\"} ]",
+      "id": 1,
+      "image": "goal_icon_monster",
+      "initial": 1,
+      "min_server_version": "1.0",
+      "name": "BUY_ANIMAL",
+      "next": "[\"PLACE_ANIMAL\"]",
+      "rewards": "[]",
+      "sheet": "hud01",
+      "type": "AND",
+      "visible": 0
+  },
+  ],
+  "admin_quest_msg": 0
+}

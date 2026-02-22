@@ -1,0 +1,994 @@
+{
+    "level_data": [
+        {
+            "currency_conversion": {
+                "coins": 15000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 350,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1100,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 1,
+            "max_bakeries": 1,
+            "xp": 0
+        },
+        {
+            "currency_conversion": {
+                "coins": 15000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 350,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1100,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 2,
+            "max_bakeries": 1,
+            "xp": 200
+        },
+        {
+            "currency_conversion": {
+                "coins": 15000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 350,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1100,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 3,
+            "max_bakeries": 1,
+            "xp": 300
+        },
+        {
+            "currency_conversion": {
+                "coins": 15000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 350,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1100,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 4,
+            "max_bakeries": 1,
+            "xp": 450
+        },
+        {
+            "currency_conversion": {
+                "coins": 17500,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 450,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 900,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1300,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 5,
+            "max_bakeries": 1,
+            "xp": 600
+        },
+        {
+            "currency_conversion": {
+                "coins": 17500,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 450,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 900,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1300,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 2,
+            "last_changed": 3483487280320,
+            "level": 6,
+            "max_bakeries": 2,
+            "xp": 750
+        },
+        {
+            "currency_conversion": {
+                "coins": 17500,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 450,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 900,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1300,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 7,
+            "max_bakeries": 2,
+            "xp": 1000
+        },
+        {
+            "currency_conversion": {
+                "coins": 17500,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 450,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 900,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1300,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 8,
+            "max_bakeries": 2,
+            "xp": 5000
+        },
+        {
+            "currency_conversion": {
+                "coins": 17500,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 450,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 900,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1300,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 9,
+            "max_bakeries": 2,
+            "xp": 10000
+        },
+        {
+            "currency_conversion": {
+                "coins": 25000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 600,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1850,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 10,
+            "max_bakeries": 3,
+            "xp": 20000
+        },
+        {
+            "currency_conversion": {
+                "coins": 25000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 600,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1850,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 3,
+            "last_changed": 3483487280320,
+            "level": 11,
+            "max_bakeries": 3,
+            "xp": 40000
+        },
+        {
+            "currency_conversion": {
+                "coins": 25000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 600,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1850,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 12,
+            "max_bakeries": 4,
+            "xp": 75000
+        },
+        {
+            "currency_conversion": {
+                "coins": 25000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 600,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1850,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 3,
+            "last_changed": 3483487280320,
+            "level": 13,
+            "max_bakeries": 4,
+            "xp": 150000
+        },
+        {
+            "currency_conversion": {
+                "coins": 25000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 600,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1850,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 1
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 14,
+            "max_bakeries": 4,
+            "xp": 300000
+        },
+        {
+            "currency_conversion": {
+                "coins": 30000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 15,
+            "max_bakeries": 4,
+            "xp": 600000
+        },
+        {
+            "currency_conversion": {
+                "coins": 30000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 4,
+            "last_changed": 3483487280320,
+            "level": 16,
+            "max_bakeries": 4,
+            "xp": 1200000
+        },
+        {
+            "currency_conversion": {
+                "coins": 30000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 4,
+            "last_changed": 3483487280320,
+            "level": 17,
+            "max_bakeries": 5,
+            "xp": 2000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 30000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 4,
+            "last_changed": 3483487280320,
+            "level": 18,
+            "max_bakeries": 5,
+            "xp": 4000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 30000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 4,
+            "last_changed": 3483487280320,
+            "level": 19,
+            "max_bakeries": 5,
+            "xp": 6000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 35000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 875,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2625,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 4,
+            "last_changed": 3483487280320,
+            "level": 20,
+            "max_bakeries": 5,
+            "xp": 8000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 35000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 875,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2625,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 21,
+            "max_bakeries": 5,
+            "xp": 10000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 35000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 875,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2625,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 22,
+            "max_bakeries": 5,
+            "xp": 12000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 35000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 875,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2625,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 23,
+            "max_bakeries": 5,
+            "xp": 14000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 35000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 875,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 1750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2625,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 24,
+            "max_bakeries": 5,
+            "xp": 16000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 40000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 1000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 4000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 25,
+            "max_bakeries": 5,
+            "xp": 18000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 40000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 1000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 4000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 26,
+            "max_bakeries": 5,
+            "xp": 20000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 40000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 1000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 4000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 27,
+            "max_bakeries": 5,
+            "xp": 22000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 40000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 1000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 4000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 28,
+            "max_bakeries": 5,
+            "xp": 24000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 40000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 1000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 4000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 2
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 29,
+            "max_bakeries": 5,
+            "xp": 26000000
+        },
+        {
+            "currency_conversion": {
+                "coins": 50000,
+                "diamonds": 50
+            },
+            "daily_rewards": [
+                {
+                    "coins": 1250,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 2500,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 3750,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 5000,
+                    "diamonds": 0
+                },
+                {
+                    "coins": 0,
+                    "diamonds": 3
+                }
+            ],
+            "diamond_reward": 0,
+            "last_changed": 3483487280320,
+            "level": 30,
+            "max_bakeries": 5,
+            "xp": 28000000
+        }
+    ]
+}
