@@ -36,9 +36,9 @@ async def _load_player(client: "SFSServerClient", bbb_id: int):
         player.id = bbb_id
         player.coins = 5000
         player.diamonds = 20
-        player.food = 2500
-        player.xp = 655
-        player.level = 5
+        player.food = 0
+        player.xp = 0
+        player.level = 1
         await player.save()
         await player.on_load_complete()
         await player.save()
