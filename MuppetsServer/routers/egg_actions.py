@@ -51,7 +51,9 @@ async def buy_egg(client: SFSServerClient, params: SFSObject):
         return SFSObject().putBool("success", False).putUtfString("message", "Error")
 
     now_ms = int(time.time() * 1000)
-    completion_time_ms = now_ms + monster.build_time * 1000
+    # Legacy: type 324 uses build_time*750 ms, type 1 uses build_time*1000 ms (MuppetsDec Player.buyEgg)
+    hatch_mult = 750 if nursery.structure_id == NURSERY_STRUCTURE_ID_FALLBACK else 1000
+    completion_time_ms = now_ms + monster.build_time * hatch_mult
 
     nursery.obj_data = monster_id
     nursery.obj_end = completion_time_ms

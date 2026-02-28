@@ -44,3 +44,16 @@ def decrypt_token(encrypted_token: str) -> dict | None:
     except Exception:
         logger.warning("Failed to decrypt token", exc_info=True)
         return None
+
+
+def calculate_probability_for_breeding(
+    level1: int, level2: int, base_probability: int, modifier: float
+) -> int:
+    """Legacy: same formula as Java Utils.calculateProbalityForBreeding."""
+    base_chanse = (base_probability / 100.0) * modifier
+    lvl1 = level1 - 3
+    lvl2 = level2 - 3
+    result_chanse = base_chanse + (
+        (((lvl1 + lvl2) - 2) * (1.0 - base_chanse)) / 22.0
+    )
+    return round(result_chanse * 100.0)

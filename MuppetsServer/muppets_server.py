@@ -3,6 +3,7 @@ import logging
 # localmodules:start
 from MuppetsServer.routers import (
     baking_actions,
+    breeding_actions,
     egg_actions,
     island_actions,
     misc_actions,
@@ -79,6 +80,7 @@ class MuppetsServer:
         MuppetsServer.server.include_router(static_data.router)
         MuppetsServer.server.include_router(monster_actions.router)
         MuppetsServer.server.include_router(egg_actions.router)
+        MuppetsServer.server.include_router(breeding_actions.router)
         MuppetsServer.server.include_router(structure_actions.router)
         MuppetsServer.server.include_router(island_actions.router)
         MuppetsServer.server.include_router(baking_actions.router)
